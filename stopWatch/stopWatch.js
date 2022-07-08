@@ -30,7 +30,7 @@ function start() {
   timerInterval = setInterval(function printTime() {
     elapsedTime = Date.now() - startTime;
     print(timeToString(elapsedTime));
-  }, 100);
+  }, 10);
 }
 
 function pause() {
