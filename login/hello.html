@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        div.buttons, h2, p {
+            text-align: center;
+        }
+    </style>
+
+
+    <head>
+        <title>Hello</title>
+    </head>
+
+
+    <body>
+        <h2>Hello Page</h2>
+        <p>Hello, <span id="id"></span></p>
+        <div class="buttons">
+            <a href="login.html">
+                <button type="button">Back</button>
+            </a>
+        </div>
+        
+        <script>
+            const id = document.getElementById("id");
+            id.innerHTML = localStorage.getItem("currentID");
+        </script>
+    </body>
+</html>
