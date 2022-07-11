@@ -1,5 +1,5 @@
 # UI_Training
-https://github.com/YiLi98317/UI_Training/main.html  
+https://yili98317.github.io/UI_Training/main.html  
 
 
 ## To-Do
