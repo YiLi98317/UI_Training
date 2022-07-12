@@ -1,14 +1,24 @@
-function register() {
-    event.preventDefault();
+function register(event) {
+    const userName = document.getElementById("userName");
+    const password = document.getElementById("password");
 
-    localStorage.setItem(id.value, password.value);
-    localStorage.setItem("currentID", id.value);
-    window.location.replace("hello.html");
+    if(userName.value =="currentID") {
+        window.alert("Invalid ID");
+        window.location.replace("register.html");
+        return;
+    }
+
+    var validPattern = /^[A-Za-z0-9]+$/;
+    if(iuserNamed.value.match(validPattern)) {
+        localStorage.setItem(userName.value, password.value);
+        localStorage.setItem("currentID", userName.value);
+        window.location.replace("hello.html");
+    } else {
+        window.alert("Invalid ID, only characters and digits allowed");
+        window.location.replace("register.html");
+    }
 }
 
-const id = document.getElementById("id");
-const password = document.getElementById("password");
-const form = document.getElementById("form");
-const error = document.getElementById("error");
+const registerButton = document.getElementById("register");
 
-form.addEventListener("submit", register);
+registerButton.addEventListener("click", register);

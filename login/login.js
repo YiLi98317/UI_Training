@@ -1,21 +1,23 @@
-function login() {
-    event.preventDefault();
+function login(event) {
+    const userName = document.getElementById("userName");
+    const password = document.getElementById("password");
 
-    var localPwd = localStorage.getItem(id.value);
-
-    if(localPwd != null && password.value == localPwd) {
-        localStorage.setItem("currentID", id.value);
-        window.location.replace("hello.html");
-        return true;
-    } else {
+    if(userName.value =="currentID") {
+        window.alert("Invalid ID");
         window.location.replace("register.html");
-        return false;
+    }
+
+    var localPwd = localStorage.getItem(userName.value);
+
+    if(localPwd && password.value == localPwd) {
+        localStorage.setItem("currentID", userName.value);
+        window.location.replace("hello.html");
+    } else {
+        window.alert("Account not found");
+        window.location.replace("register.html");
     }
 }
 
-const id = document.getElementById("id");
-const password = document.getElementById("password");
-const form = document.getElementById("form");
-const error = document.getElementById("error");
+const loginButton = document.getElementById("loginButton");
 
-form.addEventListener("submit", login);
+loginButton.addEventListener("click", login);
