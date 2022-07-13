@@ -5,11 +5,10 @@ function register(event) {
     if(userName.value =="currentID") {
         window.alert("Invalid ID");
         window.location.replace("register.html");
-        return;
     }
 
     var validPattern = /^[A-Za-z0-9]+$/;
-    if(iuserNamed.value.match(validPattern)) {
+    if(userName.value.match(validPattern)) {
         localStorage.setItem(userName.value, password.value);
         localStorage.setItem("currentID", userName.value);
         window.location.replace("hello.html");

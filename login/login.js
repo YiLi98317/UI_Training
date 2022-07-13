@@ -5,6 +5,7 @@ function login(event) {
     if(userName.value =="currentID") {
         window.alert("Invalid ID");
         window.location.replace("register.html");
+        return;
     }
 
     var localPwd = localStorage.getItem(userName.value);
