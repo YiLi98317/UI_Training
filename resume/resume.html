@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<style>
+    h1 {
+        text-align: center;
+    }
+    * {
+        max-width: 700px;
+        margin: auto;
+    }
+
+
+    body {
+    min-width: 500px;
+}
+
+    div {
+        border-radius: 5px;
+    }
+
+    #header {
+        height: 40px;
+        width: 100%;
+        background-color: #ffcccc;
+        position: fixed;
+        z-index: 1;
+    }
+
+    #title {
+        margin-left: 3%;
+    }
+
+    #footer {
+        height: 50px;
+        width: 100%;
+        background-color: #ffcccc;
+        clear: both;
+        position: relative;
+    }
+
+    .left {
+        height: 1000px;
+        width: 45px;
+        background-color: #e0eeee;
+        float: left;
+        position: fixed;
+    }
+
+    .right {
+        height: 1000px;
+        width: 45px;
+        background-color: #e0eeee;
+        float: right;
+        position: inherit;
+    }
+
+    .stuff {
+        display: inline-block;
+        margin-top: 6px;
+        margin-left: 55px;
+        width: 75%;
+        height: 1000px;
+    }
+
+    p,
+    li {
+        font-family: 'Cormorant Garamond';
+    }
+
+    .head {
+        font-size: 20px;
+    }
+
+    #name {
+        font-family: Sacramento;
+        float: right;
+        margin-top: 10px;
+        margin-right: 4%;
+    }
+
+    a {
+        color: black;
+        text-decoration: none;
+    }
+
+    @media only screen and (max-width: 430px) {
+
+        .left,
+        .right {
+            display: none;
+        }
+
+        .stuff {
+            width: 100%;
+            margin-left: 10px;
+        }
+    }
+</style>
+
+<head>
+    <title>Yi Li resume</title>
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="left"></div>
+    <div class="stuff">
+        <br><br>
+        <h1>Resume</h1>
+        <h2>Yi Li</h2>
+        <table>
+            <tr>
+                <td>113 Chamberlain st. Raleigh, NC 27607</td>
+            <td>yilee317@gmail.com</td>
+            <td>9192795116</td>
+            <td><a href="https://www.linkedin.com/in/yi-li-b95a0821b/">Linkedin</a></td>
+            <td><a href="https://github.com/YiLi98317">Github</a></td>
+            </tr>
+            
+        </table>
+        <hr>
+        <br>
+        <p class="head">Education</p>
+        <ul>
+            <li>North Carolina State University, Raleigh, NC</li>
+            <p>Master of Computer Science</p>
+            <li>Beijing University of Technology</li>
+            <p>Bachelor of Science in Computer Science</p>
+        </ul>
+        <hr>
+        <p class="head">Skills</p>
+        <table>
+            <tr>
+                <th>
+                    Languages:
+                </th>
+                <td>
+                    Java, Python, Ruby, C, C++, JavaScript
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Web Tech:
+                </th>
+                <td>
+                    Ruby on Rails, HTML, CSS
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Database:
+                </th>
+                <td>
+                    MySQL, SQLite, postgreSQL
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    Tools:
+                </th>
+                <td>
+                    PyCharm, Eclipse, VSCode, MATLAB, Android Studio, UML, Maven, GIT, Keras, OpenCV, OpenGL, Process- ing, rubymine, unity, INKY
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <p class="head">Experience</p>
+        <ul>
+            
+                <li><strong>Software Engineer Intern</strong></li>
+            <p>
+                Asian Infrastructure Investment Bank
+            </p>
+            <li>Designed and implemented the software interface for a module that handles the communication between the external client
+                requests and the internal database.</li>
+            <li>
+                Developed a comprehensive set of unit tests for the newly added software interface.
+            </li>
+        </ul>
+        <hr>
+        <p class="head">Projects</p>
+        <ul>
+            <li><strong>Expertiza</strong></li>
+            <p>
+                Maintained the open source project expertiza on GitHub, mainly worked on code optimization on certain controller. Refac- tored the long methods, renamed variable names, replaced switch statements with subclasses methods, created models for the sub- classes, removed hardcoded parameters.
+            </p>
+            <li><strong>Bank Management System</strong></li>
+            <p>
+                Developed a distributed bank management system that utilizes secure communication protocol and al- lows web-login and authentications. Implemented a data transfer module that handles the information exchange between the website and database using Java and MyBatis framework. Designed an API that provides distinct semantics for data transfer depending on the specified security level.
+            </p>
+        </ul>
+        <hr>
+        <p class="head">Extracurriculars</p>
+        <ul>
+            <li>Implemented a interactive text adventure game with NPC involved using INKY.</li>
+            <li>Implemented application based on webpage that simulating real light shine on different objects using ray tracing algorithm.</li>
+            <li>Developed a map generator for StarCraft using procedural content generation(PCG) theory. It helps people generating competition
+                level balanced and a symmetric map.</li>
+        </ul>
+    </div>
+    <div class="right"></div>
+    <div id="footer">
+        <h2 id="name">Yi Li</h2>
+    </div>
+</body>
+
+
+</html>
