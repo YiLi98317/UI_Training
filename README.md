@@ -6,8 +6,5 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
-DOM  
-DOM manipulations  
-Events  
-Event handlers  
-Event emitters  
+float vs display:inline-block
+landing page for a product
