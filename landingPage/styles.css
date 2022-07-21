@@ -1,0 +1,111 @@
+.logo {
+    display: inline-block;
+    color:white;
+}
+
+.support {
+    display: inline-block;
+}
+
+.background  {
+    height:500px;
+    background-image: url("https://stray.game/assets/images/logo-stray.png");
+    background-repeat: no-repeat;
+    background-size: 500px 400px;
+    background-position: center;
+}
+
+.content {
+    color:white;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+body {
+    background-image: url("");  
+    background-color:black;  
+}
+
+.video {
+    width:1280px;
+    height:720px;
+}
+
+.yellowText {
+    color:yellow;
+}
+
+.whiteText {
+    color:white;
+}
+
+body, h1, h2, h3, h4, h5 {
+    font-family: "Raleway", sans-serif
+}
+
+h1 {
+    margin-top:10%;
+}
+
+.intro {
+    font-size:30px;
+}
+
+.intro {
+    margin-left:20%;
+    margin-right:20%;
+    margin-top:5%;
+    margin-bottom: 5%;
+    letter-spacing:5px;
+}
+
+.gallery {
+    display:inline-block;
+    text-align: center;
+}
+
+/* [1] The container */
+.gallery {
+    height: 360px; /* [1.1] Set it as per your need */
+    overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+  
+/* [2] Transition property for smooth transformation of images */
+.gallery img {
+    transition: transform .5s ease;
+}
+  
+/* [3] Finally, transforming the image when container gets hovered */
+.gallery:hover img {
+    transform: scale(1.5);
+}
+
+h2 {
+    font-size: 50px;
+    color:rgb(255, 0, 255);
+}
+
+.supportLogo {
+    font-size: 20px;
+}
+
+.footer_container {
+    text-align: left;
+}
+
+.footer_logo {
+    display: inline-block;
+}
+
+.footer_logo_left {
+    width:70%;
+}
+
+.footer_logo_right {
+    width:20%;
+}
+
+.icon-e10 {
+    display: inline-block;
+}
