@@ -1,94 +1,22 @@
 <!DOCTYPE html>
 <html>
-<style>
-    body {
-        text-align: center;
-        width: 40%;
-        margin-left: 30%;
-    }
+    <style>
+        title, body {
+            text-align: center;
+        }
+    </style>
 
-    .margin {
-        margin-bottom: 30px;
-    }
+    <header>
+        <title>
+            UI training University
+        </title>
+    </header>
 
-    .tip {
-        width:200px;
-        margin-left:35%
-    }
-</style>
+    <body>
+        <h1>
+            Welcome to UI training University!
+        </h1>
 
-<header>
-    <title>University Form</title>
-</header>
-
-<body>
-    <h1>University Form</h1>
-
-    <form action="finish.html" target="_blank" method="post" autocomplete="off">
-        <!-- name -->
-        <label for="fname">First Name:</label>
-        <input type="text" id="fname" name="fname" placeholder="first name" required><br>
-        <label for="lname">Last Name:</label>
-        <input type="text" class="margin" id="lname" name="lname" placeholder="first name" required><br>
-
-        <label for="email">Email:</label>
-        <input type="email" class="margin" id="email" name="email required"><br>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" class="margin" id="phone" name="phone" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            required><br>
-
-        <div class="tip">
-            <p>Only accept 12-16 digits contain at least one(1) number, one(1) lowercase character, one(1) uppercase
-                character</p>
-        </div>
-        <label for="pwd">Password:</label>
-        <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" min="12" max="16"
-            required><br>
-        <label for="confirmpwd">Confirm Your Password:</label>
-        <input type="password" class="margin" id="confirmpwd" name="confirmpwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" min="12"
-            max="16" required><br>
-
-
-        <label>Gender:</label><br>
-        <input type="radio" id="male" name="gender" value="Male">
-        <label for="male">Male</label><br>
-        <input type="radio" class="margin" id="female" name="gender" value="Female">
-        <label for="female">Female</label><br>
-
-        <label>Class Hour This Semester:</label>
-        <input type="number" class="margin" id="classhour" name="classhour" step="3" value="9" required><br>
-
-        <label>Car Permit:</label><br>
-        <input type="checkbox" id="am" name="am" value="8:00-12:00">
-        <label for="am">8:00-12:00</label><br>
-        <input type="checkbox"  class="margin" id="pm" name="pm" value="12:00-17:00">
-        <label for="am">12:00-17:00</label><br>
-
-        <label>Extra:</label><br>
-        <a href="https://www.youtube.com">
-            <input type="button" onclick="alert('You will be rederict to external page')" value="External Insurance">
-        </a><br>
-        <a href="https://www.youtube.com">
-            <input type="button" class="margin" onclick="alert('You will be rederict to external page')" value="External Dental">
-        </a><br>
-
-        <label for="birthday">Birthday:</label>
-        <input type="date" class="margin" id="birthday" name="birthday" min="1980-1-1" max="2022-07-22" required><br>
-
-        <label for="color">Select your student background color:</label>
-        <input type="color" class="margin" id="color" name="color" value="#ff0000" required><br>
-
-        <label for="i20">Submit your I-20:</label>
-        <input type="file" class="margin" id="i20" name="i20"><br>
-
-        <label for="url">Add your homepage:</label>
-        <input type="url" class="margin" id="url" name="url" placeholder="https://" required><br>
-
-        <input type="submit">
-        <input type="reset">
-    </form>
-
-</body>
-
+        <a href="form.html"><button>Click to apply now!</button></a>
+    </body>
 </html>
