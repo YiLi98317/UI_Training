@@ -1,0 +1,53 @@
+.login-container.buttons {
+    width:200px;
+    height:200px;
+}
+
+.login-body {
+    text-align: center;
+}
+
+.hello-body {
+    text-align: center;
+}
+
+.form-body {
+    text-align: left;
+    width: 40%;
+    margin-left: 40%;
+    background-color: aqua;
+}
+
+.form-margin {
+    margin-bottom: 30px;
+}
+
+.form-tip {
+    position: relative;
+    display: inline-block;
+}
+
+.form-tiptext {
+    background-color: black;
+    color:white;
+    text-align: center;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 105%;
+    width:50%;
+}
+
+.form-tip .form-tiptext {
+    visibility: hidden;
+}
+
+.form-tip:hover .form-tiptext {
+    visibility: visible;
+}
+
+.register-body {
+    text-align: center;
+}

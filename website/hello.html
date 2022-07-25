@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello</title>
+        <link href="styles.css" rel="stylesheet">
+    </head>
+
+
+    <body class="hello-body">
+        <h2>Hello Page</h2>
+        <p>Thank you for complete the form, <span id="id"></span></p>
+        <div class="buttons">
+            <a href="login.html">
+                <button type="button">Logout</button>
+            </a>
+        </div>
+        
+        <script>
+            const id = document.getElementById("id");
+            id.innerHTML = localStorage.getItem("currentID");
+        </script>
+    </body>
+</html>

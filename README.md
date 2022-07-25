@@ -6,3 +6,4 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
+login page ----> user logging in ---> resume ---> button ---> form page ----> submitted ----> thank you page with user name ---> logout ---> it should logout me
