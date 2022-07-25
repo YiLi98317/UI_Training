@@ -51,3 +51,16 @@
 .register-body {
     text-align: center;
 }
+
+.resume-body {
+    text-align: center;
+}
+
+.resume-form {
+    text-align: left;
+    margin-left: 30%;
+}
+
+.resume-margin {
+    margin-top: 10%;
+}

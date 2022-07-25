@@ -5,8 +5,15 @@
         <link href="styles.css" rel="stylesheet">
     </head>
 
-    <body>
-        <a href="form.html"><button>Click to form</button></a>
+    <body class="resume-body">
+        <h1>Please submit your resume first.</h1>
+        <p>After subimit your resume, you will be asked to complete a form.</p>
+
+        <form class="resume-form" action="form.html" method="post">
+            <input class="resume-margin" type="file" id="myFile" name="filename" required>
+            <br>
+            <input class="resume-margin" type="submit" value="Click to submit and go to form">
+        </form>
         
     </body>
 </html>
