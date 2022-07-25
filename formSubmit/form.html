@@ -2,9 +2,10 @@
 <html>
 <style>
     body {
-        text-align: center;
+        text-align: left;
         width: 40%;
-        margin-left: 30%;
+        margin-left: 40%;
+        background-color: aqua;
     }
 
     .margin {
@@ -12,8 +13,29 @@
     }
 
     .tip {
-        width:200px;
-        margin-left:35%
+        position: relative;
+        display: inline-block;
+    }
+
+    .tiptext {
+        background-color: black;
+        color:white;
+        text-align: center;
+
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        top: -5px;
+        left: 105%;
+        width:50%;
+    }
+
+    .tip .tiptext {
+        visibility: hidden;
+    }
+
+    .tip:hover .tiptext {
+        visibility: visible;
     }
 </style>
 
@@ -38,17 +60,23 @@
         <input type="tel" class="margin" id="phone" name="phone" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
             required><br>
 
+        
         <div class="tip">
-            <p>Only accept 12-16 digits contain at least one(1) number, one(1) lowercase character, one(1) uppercase
-                character</p>
+            <label for="pwd">Password:</label>
+            <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" min="12" max="16"
+                required>
+            <span class="tiptext">Only accept 12-16 digits contain at least one(1) number, one(1) lowercase character, one(1) uppercase
+                    character</span>
         </div>
-        <label for="pwd">Password:</label>
-        <input type="password" id="pwd" name="pwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" min="12" max="16"
-            required><br>
-        <label for="confirmpwd">Confirm Your Password:</label>
-        <input type="password" class="margin" id="confirmpwd" name="confirmpwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" min="12"
-            max="16" required><br>
-
+        <br>
+        <div class="tip">
+            <label for="confirmpwd">Confirm Your Password:</label>
+            <input type="password" class="margin" id="confirmpwd" name="confirmpwd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}" min="12"
+            max="16" required>
+            <span class="tiptext">Only accept 12-16 digits contain at least one(1) number, one(1) lowercase character, one(1) uppercase
+            character</span>
+        </div>
+        <br>
 
         <label>Gender:</label><br>
         <input type="radio" id="male" name="gender" value="Male">
