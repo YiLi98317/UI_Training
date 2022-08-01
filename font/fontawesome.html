@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<style>
+    .navi,
+    .font {
+        font-family: 'Mouse Memoirs', sans-serif;
+        font-size: 48px;
+        text-align: center;
+    }
+
+    .material-symbols-outlined {
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+    }
+
+
+    .navi {
+        display: inline;
+    }
+
+    .navi-ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+
+    .navi-li {
+        float: left;
+    }
+
+    .navi-li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 18px;
+        text-decoration: none;
+    }
+
+    .navi-li a:hover:not(.about) {
+        background-color: #111;
+    }
+
+    .li-about {
+        float: right;
+        background-color: green;
+    }
+</style>
+
+<head>
+    <script src="https://kit.fontawesome.com/a4aafb8fc1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navi">
+        <ul class="navi-ul">
+            <li class="navi-li"><a href="home.html">
+                    <span class="material-symbols-outlined">
+                        home
+                    </span>Home</a></li>
+            <li class="navi-li"><a href="fontawesome.html"><span class="material-symbols-outlined">
+                        favorite
+                    </span>
+                    Favorites</a></li>
+            <li class="navi-li"><a href="iconlist.html"><span class="material-symbols-outlined">
+                        star
+                    </span>Stars</a></li>
+            <li class="navi-li"><a href="#about"><span class="material-symbols-outlined">
+                        more_vert
+                    </span>About</a></li>
+            <li class="navi-li li-about">
+                <a class="about" href="#about"><span class="material-symbols-outlined">
+                        menu
+                    </span>More</a>
+            </li>
+        </ul>
+
+        <ul class="navi-right">
+
+        </ul>
+
+    </div>
+
+    <div class="font">
+        <h1>font awesome</h1>
+        <p>icons:</p>
+    </div>
+
+    <i class="fa-solid fa-font-awesome"></i>
+    <i class="fa-regular fa-font-awesome"></i>
+    <i class="fa-light fa-font-awesome"></i>
+    <i class="fa-thin fa-font-awesome"></i>
+
+</body>
+
+</html>
