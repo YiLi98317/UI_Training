@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+
+    <body>
+        <label>First number: </label>
+        <input type="text" id="input1">
+        <label>Second number: </label>
+        <input type="text" id="input2">
+        <br>
+        <input type="button" value="+" onclick="x.value = parseInt(input1.value) + parseInt(input2.value)">
+        <input type="button" value="-" onclick="x.value = parseInt(input1.value) - parseInt(input2.value)">
+        <input type="button" value="*" onclick="x.value = parseInt(input1.value) * parseInt(input2.value)">
+        <input type="button" value="/" onclick="x.value = parseInt(input1.value) / parseInt(input2.value)">
+        <br>
+        <label>Answer:</label>
+        <input type="text" id="x">
+        <br>
+        <input type="button" value="reset" onclick="x.value = null">
+    </body>
+</html>
+<!-- 2 textbox
+4 btn: sub reset subtract multiply division -->
