@@ -40,7 +40,7 @@
 
     input:hover {
         border: 0 solid #000;
-        color: #495069;
+        color: yellow;
         background-color: #8F5FD4;
         border-radius: 4px;
         width: 60px;
@@ -49,6 +49,7 @@
         margin: 5px;
         font-size: 20px;
         box-shadow: 0 4px #644294;
+        /* animation: flip .5s 1; */
     }
 
     input:active {
@@ -96,8 +97,10 @@
     }
 
     .operator:hover {
+        color: blue;
         background-color: #E7F56B;
         box-shadow: 0 4px #B7C259;
+        /* animation: flip .5s 1; */
     }
 
     .operator:active {
@@ -137,6 +140,33 @@
         text-align: center;
         color: aqua;
         text-shadow: 5px 5px 10px yellowgreen;
+        animation: flip 1s infinite;
+    }
+
+    @keyframes flip {
+
+        0%,
+        80% {
+            transform: rotateY(360deg)
+        }
+    }
+
+    .answer {
+        color: blue;
+    }
+
+    .answer:hover {
+        color: red;
+        text-shadow: 2px 2px 4px red;
+    }
+
+    input {
+        transition: transform .5s ease;
+    }
+
+    /* [3] Finally, transforming the image when container gets hovered */
+    input:hover {
+        transform: scale(1.5);
     }
 </style>
 
@@ -151,45 +181,59 @@
     </title>
 </head>
 
+
+
 <body>
     <h1>Fancy Calculator</h1>
     <form name="calc">
         <table>
             <tr>
                 <td>
-                    <input type="text" name="input" size="16" id="answer">
-
+                    <input type="text" class="answer" name="input" size="16" id="answer">
                     <br>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <input type="button" name="one" value="  1  " onclick="calc.input.value += '1'">
-                    <input type="button" name="two" value="  2  " onclick="calc.input.value += '2'">
-                    <input type="button" name="three" value="  3  " onclick="calc.input.value += '3'">
-                    <input type="button" class="operator" name="plus" value="  +  " onclick="calc.input.value += ' + '">
+                    <input type="button" name="one" value="  1  " onclick="calc.input.value += '1'; changeBack();">
+                    <input type="button" name="two" value="  2  " onclick="calc.input.value += '2'; changeBack();">
+                    <input type="button" name="three" value="  3  " onclick="calc.input.value += '3'; changeBack();">
+                    <input type="button" class="operator" name="plus" value="  +  " onclick="calc.input.value += ' + '; changeBack();">
                     <br>
-                    <input type="button" name="four" value="  4  " onclick="calc.input.value += '4'">
-                    <input type="button" name="five" value="  5  " onclick="calc.input.value += '5'">
-                    <input type="button" name="six" value="  6  " onclick="calc.input.value += '6'">
+                    <input type="button" name="four" value="  4  " onclick="calc.input.value += '4'; changeBack();">
+                    <input type="button" name="five" value="  5  " onclick="calc.input.value += '5'; changeBack();">
+                    <input type="button" name="six" value="  6  " onclick="calc.input.value += '6'; changeBack();">
                     <input type="button" class="operator" name="minus" value="  -  "
-                        onclick="calc.input.value += ' - '">
+                        onclick="calc.input.value += ' - '; changeBack();">
                     <br>
-                    <input type="button" name="seven" value="  7  " onclick="calc.input.value += '7'">
-                    <input type="button" name="eight" value="  8  " onclick="calc.input.value += '8'">
-                    <input type="button" name="nine" value="  9  " onclick="calc.input.value += '9'">
+                    <input type="button" name="seven" value="  7  " onclick="calc.input.value += '7'; changeBack();">
+                    <input type="button" name="eight" value="  8  " onclick="calc.input.value += '8'; changeBack();">
+                    <input type="button" name="nine" value="  9  " onclick="calc.input.value += '9'; changeBack();">
                     <input type="button" class="operator" name="times" value="  x  "
-                        onclick="calc.input.value += ' * '">
+                        onclick="calc.input.value += ' * '; changeBack();">
                     <br>
-                    <input type="button" id="clear" name="clear" value="  c  " onclick="calc.input.value = ''">
-                    <input type="button" name="zero" value="  0  " onclick="calc.input.value += '0'">
-                    <input type="button" name="doit" value="  =  " onclick="calc.input.value = eval(calc.input.value)">
-                    <input type="button" class="operator" name="div" value="  /  " onclick="calc.input.value += ' / '">
+                    <input type="button" id="clear" name="clear" value="  c  " onclick="calc.input.value = ''; changeBack();">
+                    <input type="button" name="zero" value="  0  " onclick="calc.input.value += '0'; changeBack();">
+                    <input type="button" class="eq" name="doit" value="  =  "
+                        onclick="calc.input.value = eval(calc.input.value); changeRed();">
+                    <input type="button" class="operator" name="div" value="  /  " onclick="calc.input.value += ' / '; changeBack();">
                     <br>
                 </td>
             </tr>
         </table>
     </form>
+
+    <script>
+        function changeRed() {
+            document.getElementById("answer").style.color = 'red';
+            document.getElementById("answer").style.backgroundColor = 'aqua';
+        }
+
+        function changeBack() {
+            document.getElementById("answer").style.color = 'blue';
+            document.getElementById("answer").style.backgroundColor = 'white';
+        }
+    </script>
 </body>
 
 </html>
