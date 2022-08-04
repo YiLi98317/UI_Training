@@ -6,5 +6,6 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
-fancyer calculator
-what is float why we use float
+overflow
+float
+opacity

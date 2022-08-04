@@ -1,0 +1,169 @@
+.navi {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: inline;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+
+h1 {
+    text-align: center;
+}
+
+#overflow1 {
+    background: #4CAF50;
+    color: black;
+    padding: 15px;
+    width: 50%;
+    height: 100px;
+    overflow: scroll;
+    border: 1px solid #ccc;
+}
+
+#overflow2 {
+    background: #4CAF50;
+    color: black;
+    padding: 15px;
+    width: 50%;
+    height: 100px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+
+#overflow3 {
+    background: #4CAF50;
+    color: black;
+    padding: 15px;
+    width: 50%;
+    height: 100px;
+    overflow: visible;
+    border: 1px solid #ccc;
+}
+
+.content {
+    margin-left: 30%;
+    /* width: 50%; */
+}
+
+.float {
+    color: black;
+    padding: 15px;
+    width: 50%;
+    border: 1px solid #ccc;
+}
+
+.img1 {
+    float: none;
+}
+
+.img2 {
+    float: left;
+}
+
+.img3,
+.img4 {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.opacity-content img {
+    opacity: 0.5;
+}
+
+.opacity-content img:hover {
+    opacity: 1;
+}
+
+.background {
+    background: url("https://www.w3schools.com/css/img_5terre.jpg") no-repeat;
+    width: 50%;
+    border: 2px solid black;
+}
+
+.transbox {
+    margin: 15px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+}
+
+.transbox p {
+    font-weight: bold;
+    opacity: 1.0;
+    color: black;
+}
+
+.position {
+    width: 50%;
+}
+
+.static {
+    position: static;
+    border: 3px solid #73AD21;
+}
+
+.relative {
+    position: relative;
+    left: 30px;
+    border: 3px solid #73AD21;
+}
+
+.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    border: 3px solid #73AD21;
+}
+
+.relative1 {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 3px solid #73AD21;
+}
+
+.absolute {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 200px;
+    height: 100px;
+    border: 3px solid #73AD21;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    padding: 5px;
+    background-color: #cae8ca;
+    border: 2px solid #4CAF50;
+}
