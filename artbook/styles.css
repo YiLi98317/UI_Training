@@ -1,0 +1,120 @@
+h1 {
+    text-align: center;
+    font-size: 50px;
+    color: yellowgreen;
+    position: sticky;
+    top: 5px;
+}
+
+.container {
+    padding: 5%;
+    background-color: aquamarine;
+}
+
+.content {
+    border-radius: 25px;
+    width: 60%;
+    margin-left: 20%;
+    clear: both;
+    margin-bottom: 5%;
+    /* overflow: hidden; [1.2] Hide the overflowing of child elements */
+    font-size: 20px;
+}
+
+.bg-grey {
+    background-color: white;
+}
+
+.bg-white {
+    background-color: whitesmoke;
+}
+
+/* [2] Transition property for smooth transformation of images */
+.content img {
+    transition: transform .5s ease;
+}
+  
+/* [3] Finally, transforming the image when container gets hovered */
+.content:hover img {
+    transform: scale(1.3);
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.float-left {
+    float: left;
+    margin-right: 5%;
+}
+
+.float-right {
+    float: right;
+    margin-left: 5%;
+}
+
+.content1 {
+    color: transparent;
+    width: 60%;
+    margin-left: 40%;
+    clear: both;
+    margin-bottom: 5%;
+    /* overflow: hidden; [1.2] Hide the overflowing of child elements */
+    font-size: 20px;
+    transition: transform .5s ease;
+}
+
+.content1:hover {
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 25px;
+    width: 60%;
+    margin-left: 20%;
+    clear: both;
+    margin-bottom: 5%;
+    /* overflow: hidden; [1.2] Hide the overflowing of child elements */
+    font-size: 20px;
+    transition: transform .5s ease;
+}
+
+.content1 img{
+    transition: transform .5s ease;
+}
+
+.content1:hover img{
+    transform: scale(1.3);
+}
+
+
+
+.content2 {
+    color: transparent;
+    border-radius: 25px;
+    width: 60%;
+    margin-left: 0%;
+    clear: both;
+    margin-bottom: 5%;
+    font-size: 20px;
+}
+
+.content2:hover {
+    color: black;
+    background-color: white;
+    border-radius: 25px;
+    width: 60%;
+    margin-left: 20%;
+    clear: both;
+    margin-bottom: 5%;
+    font-size: 20px;
+    transition: transform .5s ease;
+}
+
+.content2 img{
+    transition: transform .5s ease;
+}
+
+.content2:hover img{
+    transform: scale(1.3);
+}
