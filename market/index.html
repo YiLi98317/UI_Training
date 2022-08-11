@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Market</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a4aafb8fc1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        as="style">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+
+    <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs" rel="preload" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="font navi">
+            <ul>
+                <li class="navi-li" id="defaultOpen" onclick="openTab(event, '0')"><a><span
+                            class="material-symbols-outlined">
+                            home
+                        </span>Home</a></li>
+                <li class="navi-li" onclick="openTab(event, '1')"><a><span class="material-symbols-outlined">
+                            favorite
+                        </span>Cloth</a></li>
+                <li class="navi-li" onclick="openTab(event, '2')"><a><span class="material-symbols-outlined">
+                            star
+                        </span>Game</a></li>
+                <li class="navi-li" onclick="openTab(event, '3')"><a><span class="material-symbols-outlined">
+                            star
+                        </span>Food</a></li>
+                <li class="navi-li dropdown" onclick="openTab(event, '4')">
+                    <a class="dropdown-btn"><span class="material-symbols-outlined">
+                            more_vert
+                        </span>3rd party seller
+                    </a>
+                    <div class="dropdown-content">
+                        <a onclick="location.href = 'https://www.amazon.com';">amazon</a>
+                        <a onclick="location.href = 'https://www.beay.com';">ebay</a>
+                        <a onclick="location.href = 'https://www.walmart.com/';">walmart</a>
+                    </div>
+                </li>
+
+
+                <li class="navi-arrow" onclick="forward(event)"><a><span class="material-symbols-outlined">
+                            arrow_forward
+                        </span>right</a></li>
+                <li class="navi-arrow" onclick="back(event)"><a><span class="material-symbols-outlined">
+                            arrow_back
+                        </span>left</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="tabcontent" id="0">
+        <div class="center">
+            <h1>Welcome to the market!</h1>
+            <p>we have everything you need.</p>
+        </div>
+
+
+        <h2>Discount:</h2>
+
+
+    </div>
+
+    <div class="tabcontent" id="1">
+        <h1>CLoth</h1>
+    </div>
+
+    <div class="tabcontent" id="2">
+        <h1>Game</h1>
+    </div>
+
+    <div class="tabcontent" id="3">
+        <h1>Food</h1>
+    </div>
+
+    <div class="tabcontent" id="4">
+        <div class="center margin">
+            <h1>We have special discounts with large shop</h1>
+        </div>
+        
+    </div>
+
+
+    <!-- <h2>Tabs</h2>
+    <p>Click on the buttons inside the tabbed menu:</p>
+
+    <div class="tab">
+        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
+        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+    </div>
+
+    <div id="London" class="tabcontent">
+        <h3>London</h3>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div> -->
+
+
+    <footer>
+
+    </footer>
+
+    <script>
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
+
+        function openTab(evt, tabNum) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("navi-li");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            localStorage.setItem("curr", tabNum);
+            document.getElementById(tabNum).style.display = "block";
+            evt.currentTarget.className += " active";
+            return;
+        }
+
+        function forward(evt) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("navi-li");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            let tabNum = localStorage.getItem("curr");
+            tabNum++;
+            if (tabNum > 3) tabNum = tabNum - 5;
+            localStorage.setItem("curr", tabNum);
+            document.getElementById(tabNum).style.display = "block";
+            evt.currentTarget.className += " active";
+            return;
+        }
+
+        function back(evt) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("navi-li");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            let tabNum = localStorage.getItem("curr");
+            tabNum--;
+            if (tabNum < 0) tabNum = tabNum + 5;
+            localStorage.setItem("curr", tabNum);
+            document.getElementById(tabNum).style.display = "block";
+            evt.currentTarget.className += " active";
+            return;
+        }
+
+        // function openCity(evt, cityName) {
+        //     var i, tabcontent, tablinks;
+        //     tabcontent = document.getElementsByClassName("tabcontent");
+        //     for (i = 0; i < tabcontent.length; i++) {
+        //         tabcontent[i].style.display = "none";
+        //     }
+        //     tablinks = document.getElementsByClassName("tablinks");
+        //     for (i = 0; i < tablinks.length; i++) {
+        //         tablinks[i].className = tablinks[i].className.replace(" active", "");
+        //     }
+        //     document.getElementById(cityName).style.display = "block";
+        //     evt.currentTarget.className += " active";
+        // }   
+    </script>
+</body>
+
+</html>

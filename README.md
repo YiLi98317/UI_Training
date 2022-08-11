@@ -9,13 +9,12 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 attribute selectors
 calc
 
-tab flash
+tab flash -> display=fallback
+
 food shop
     all we learned
-    navigation bar
     img gallery
     click to detail product
     header body footer
-    font
     fancy style
-    
+    vertical tab
