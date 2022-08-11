@@ -6,9 +6,16 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
-overflow
-float
-opacity
+attribute selectors
+calc
 
-dropdown
-tab arrow button
+tab flash
+food shop
+    all we learned
+    navigation bar
+    img gallery
+    click to detail product
+    header body footer
+    font
+    fancy style
+    

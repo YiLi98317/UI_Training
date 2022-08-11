@@ -2,6 +2,7 @@
     font-family: 'Mouse Memoirs', sans-serif;
     font-size: 48px;
     text-align: center;
+    font-display: block;
 }
 
 .material-symbols-outlined {
@@ -74,4 +75,4 @@ li a:hover {
 
 .dropdown:hover .dropdown-content {
     display: block;
-  }
+}
