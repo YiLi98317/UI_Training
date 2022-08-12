@@ -12,8 +12,4 @@ calc
 tab flash -> display=fallback
 
 food shop
-    all we learned
-    img gallery
-    footer
     fancy style
-    vertical tab
