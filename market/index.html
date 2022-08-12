@@ -18,21 +18,22 @@
 </head>
 
 <body>
-    <header>
+    <!-- navigation bar -->
+    <header class="sticky">
         <div class="font navi">
             <ul>
                 <li class="navi-li" id="defaultOpen" onclick="openTab(event, '0')"><a><span
                             class="material-symbols-outlined">
                             home
                         </span>Home</a></li>
-                <li class="navi-li" onclick="openTab(event, '1')"><a><span class="material-symbols-outlined">
-                            favorite
+                <li class="navi-li" onclick="openTab(event, '1'); openCategory(event, 'Cloth1')"><a><span class="material-symbols-outlined">
+                            person
                         </span>Cloth</a></li>
-                <li class="navi-li" onclick="openTab(event, '2')"><a><span class="material-symbols-outlined">
-                            star
+                <li class="navi-li" onclick="openTab(event, '2'); openCategory(event, 'Game1')"><a><span class="material-symbols-outlined">
+                            rocket_launch
                         </span>Game</a></li>
-                <li class="navi-li" onclick="openTab(event, '3')"><a><span class="material-symbols-outlined">
-                            star
+                <li class="navi-li" onclick="openTab(event, '3'); openCategory(event, 'Food1')"><a><span class="material-symbols-outlined">
+                            weight
                         </span>Food</a></li>
                 <li class="navi-li dropdown" onclick="openTab(event, '4')">
                     <a class="dropdown-btn"><span class="material-symbols-outlined">
@@ -41,7 +42,7 @@
                     </a>
                     <div class="dropdown-content">
                         <a onclick="location.href = 'https://www.amazon.com';">amazon</a>
-                        <a onclick="location.href = 'https://www.beay.com';">ebay</a>
+                        <a onclick="location.href = 'https://www.ebay.com/';">ebay</a>
                         <a onclick="location.href = 'https://www.walmart.com/';">walmart</a>
                     </div>
                 </li>
@@ -57,6 +58,7 @@
         </div>
     </header>
 
+    <!-- home -->
     <div class="tabcontent" id="0">
         <div class="center">
             <h1>Welcome to the market!</h1>
@@ -64,63 +66,495 @@
         </div>
 
 
-        <h2>Discount:</h2>
+        <h2 class="margin-to-mid">Discount:</h2>
+
+        <h3 class="center">These are the product have discount today!</h3>
+
+            <div class="gallery">
+                <a target="_blank" href="product.html">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Demon's soul's</div>
+            </div>
 
 
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Uncharted</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Horizon</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Spider-man</div>
+            </div>
+
+            <div class="clearfix">
+
+            </div>
     </div>
 
+    <!-- cloth -->
     <div class="tabcontent" id="1">
-        <h1>CLoth</h1>
+        <h1>Cloth</h1>
+
+        <h2>We provide lots of goods for all age customers.</h2>
+        <p>Check out our goods now!</p>
+
+        <div class="category">
+            <button class="tablinks" onclick="openCategory(event, 'Cloth1')" id="defaultCloth">Men</button>
+            <button class="tablinks" onclick="openCategory(event, 'Cloth2')">Women</button>
+            <button class="tablinks" onclick="openCategory(event, 'Cloth3')">Kids</button>
+        </div>
+
+        <div id="Cloth1" class="categoryContent men">
+            <h3 class="center margin">These are the goods we provide for men.</h3>
+
+            <div class="gallery">
+                <a target="_blank" href="product.html">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Tops</div>
+            </div>
+
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Shirts</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Pants</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Shoes</div>
+            </div>
+
+            <div class="clearfix">
+
+            </div>
+        </div>
+
+        <div id="Cloth2" class="categoryContent women">
+            <h3 class="center margin">These are the goods we provide for women.</h3>
+
+            <div class="gallery">
+                <a target="_blank" href="product.html">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Tops</div>
+            </div>
+
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Shirts</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Pants</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Shoes</div>
+            </div>
+
+            <div class="clearfix">
+
+            </div>
+        </div>
+
+        <div id="Cloth3" class="categoryContent kid">
+            <h3 class="center margin">These are the goods we provide for kids.</h3>
+
+            <div class="gallery">
+                <a target="_blank" href="product.html">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Tops</div>
+            </div>
+
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Shirts</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Pants</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Shoes</div>
+            </div>
+
+            <div class="clearfix">
+
+            </div>
+        </div>
     </div>
 
+    <!-- game -->
     <div class="tabcontent" id="2">
-        <h1>Game</h1>
+        <h1 class="center">Game</h1>
+        <h2>We provide tons of games for players from different platform.</h2>
+        <p>Check out our games now!</p>
+
+        <div class="category">
+            <button class="tablinks" onclick="openCategory(event, 'Game1')" id="defaultGame">PlayStation</button>
+            <button class="tablinks" onclick="openCategory(event, 'Game2')">Xbox</button>
+            <button class="tablinks" onclick="openCategory(event, 'Game3')">PC</button>
+        </div>
+
+        <div id="Game1" class="categoryContent ps">
+            <h3 class="center margin">These are the games we provide for playstation player.</h3>
+
+            <!-- <div class="responsive"> -->
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Demon's soul's</div>
+            </div>
+            <!-- </div> -->
+
+
+            <!-- <div class="responsive"> -->
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Uncharted</div>
+            </div>
+            <!-- </div> -->
+
+            <!-- <div class="responsive"> -->
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Horizon</div>
+            </div>
+            <!-- </div> -->
+
+            <!-- <div class="responsive"> -->
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Spider-man</div>
+            </div>
+            <!-- </div> -->
+
+            <div class="clearfix">
+
+            </div>
+        </div>
+
+        <div id="Game2" class="categoryContent xbox">
+            <h3 class="center margin">These are the games we provide for Xbox player.</h3>
+
+            <div class="gallery">
+                <a target="_blank" href="product.html">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Demon's soul's</div>
+            </div>
+
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Uncharted</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Horizon</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Spider-man</div>
+            </div>
+
+            <div class="clearfix">
+
+            </div>
+        </div>
+
+        <div id="Game3" class="categoryContent pc">
+            <h3 class="center margin">These are the games we provide for PC player.</h3>
+
+            <div class="gallery">
+                <a target="_blank" href="product.html">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Demon's soul's</div>
+            </div>
+
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Uncharted</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Horizon</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Spider-man</div>
+            </div>
+
+            <div class="clearfix">
+
+            </div>
+        </div>
     </div>
 
+    <!-- food -->
     <div class="tabcontent" id="3">
-        <h1>Food</h1>
+        <h1 class="center">Food</h1>
+        <h2>We provide tons of foods for you listed in different category.</h2>
+        <p>Check out our foods now!</p>
+
+        <div class="category">
+            <button class="tablinks" onclick="openCategory(event, 'Food1')" id="defaultFood">Veges</button>
+            <button class="tablinks" onclick="openCategory(event, 'Food2')">Protein</button>
+            <button class="tablinks" onclick="openCategory(event, 'Food3')">Snack</button>
+        </div>
+
+        <div id="Food1" class="categoryContent vege">
+            <h3 class="center margin">These are the veges we provide for you.</h3>
+
+            <div class="gallery">
+                <a target="_blank" href="product.html">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Tomato</div>
+            </div>
+
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">onion</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Lettuce</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Cucumber</div>
+            </div>
+
+            <div class="clearfix">
+
+            </div>
+        </div>
+
+        <div id="Food2" class="categoryContent protein">
+            <h3 class="center margin">These are the proteins we provide for you.</h3>
+
+            <div class="gallery">
+                <a target="_blank" href="product.html">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Steak</div>
+            </div>
+
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Chicken</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Spicy Chicken</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Tofu</div>
+            </div>
+
+            <div class="clearfix">
+
+            </div>
+        </div>
+
+        <div id="Food3" class="categoryContent snack">
+            <h3 class="center margin">These are the snacks we provide for you.</h3>
+
+            <div class="gallery">
+                <a target="_blank" href="product.html">
+                    <img src="https://m.media-amazon.com/images/I/81QoNRp5+WL._SL1353_.jpg" alt="demons souls"
+                        width="300" height="300">
+                </a>
+                <div class="desc">Cake</div>
+            </div>
+
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81DJbe2OaSL._SX522_.jpg" alt="uncharted" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Chip</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/81jELdDTL8L._SL1500_.jpg" alt="godofwar" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Donut</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg">
+                    <img src="https://m.media-amazon.com/images/I/71CqfmZX3PL._SL1361_.jpg" alt="spiderman" width="300"
+                        height="300">
+                </a>
+                <div class="desc">Brownie</div>
+            </div>
+
+            <div class="clearfix">
+
+            </div>
+        </div>
     </div>
 
+    <!-- dropdown -->
     <div class="tabcontent" id="4">
         <div class="center margin">
             <h1>We have special discounts with large shop</h1>
         </div>
-        
+
     </div>
 
 
-    <!-- <h2>Tabs</h2>
-    <p>Click on the buttons inside the tabbed menu:</p>
-
-    <div class="tab">
-        <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-        <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-        <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-    </div>
-
-    <div id="London" class="tabcontent">
-        <h3>London</h3>
-        <p>London is the capital city of England.</p>
-    </div>
-
-    <div id="Paris" class="tabcontent">
-        <h3>Paris</h3>
-        <p>Paris is the capital of France.</p>
-    </div>
-
-    <div id="Tokyo" class="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
-    </div> -->
-
-
-    <footer>
-
+    <footer class="footer">
+        <button class="float-right">
+            <a  class="no-dec" href="https://github.com/YiLi98317/UI_Training">
+                Goto Repo
+            </a>
+        </button>
+        <button class="float-right">
+            <a class="no-dec" href="https://yili98317.github.io/UI_Training/index.html">
+                List View
+            </a>
+        </button>
+        <p class="yellowText">Powered by <a class="yellowText" href="https://github.com/YiLi98317" target="_blank">Yi
+                Li</a></p>
     </footer>
 
     <script>
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
+        document.getElementById("defaultCloth").click();
+        document.getElementById("defaultGame").click();
+        document.getElementById("defaultFood").click();
 
         function openTab(evt, tabNum) {
             var i, tabcontent, tablinks;
@@ -179,19 +613,18 @@
             return;
         }
 
-        // function openCity(evt, cityName) {
-        //     var i, tabcontent, tablinks;
-        //     tabcontent = document.getElementsByClassName("tabcontent");
-        //     for (i = 0; i < tabcontent.length; i++) {
-        //         tabcontent[i].style.display = "none";
-        //     }
-        //     tablinks = document.getElementsByClassName("tablinks");
-        //     for (i = 0; i < tablinks.length; i++) {
-        //         tablinks[i].className = tablinks[i].className.replace(" active", "");
-        //     }
-        //     document.getElementById(cityName).style.display = "block";
-        //     evt.currentTarget.className += " active";
-        // }   
+        function openCategory(evt, category) {
+            var i, categoryContent, tablinks;
+            categoryContent = document.getElementsByClassName("categoryContent");
+            for (i = 0; i < categoryContent.length; i++) {
+                categoryContent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(category).style.display = "block";
+        }
     </script>
 </body>
 

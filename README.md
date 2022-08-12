@@ -14,7 +14,6 @@ tab flash -> display=fallback
 food shop
     all we learned
     img gallery
-    click to detail product
-    header body footer
+    footer
     fancy style
     vertical tab
