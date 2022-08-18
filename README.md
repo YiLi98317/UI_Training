@@ -6,16 +6,19 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
-calculator use js
+calculator
 
-shift
-unshift
-reduce
-slice
-splice
-some
-filter
-map
+1. object 111
+2. array
+    shift: remove from head
+    unshift: add to first
+    reduce 11
+    filter 
+    map
+    some
+    slice
+    splice
+3. string
 
 function:
     default para

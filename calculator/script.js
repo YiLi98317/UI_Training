@@ -21,6 +21,6 @@ function clearEquation() {
 }
 
 function calculateEquation() {
-    screen.value = eval(calc.input.value);
+    screen.value = eval(screen.value);
     changeRed();
 }

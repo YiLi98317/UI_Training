@@ -78,8 +78,64 @@ function is(arr) {
     console.log(arr);
 }
 
-
-
 // Driver Method
-let arr = [12, 11, 13, 5, 6];
-is(arr);
+// let arr = [12, 11, 13, 5, 6];
+// is(arr);
+
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = words.filter(word => (word.length > 6));
+
+// console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+
+
+// const map = Array.prototype.map;
+// const charCodes = map.call('Hello World', (x) => x.charCodeAt(0));
+
+// console.log(charCodes);
+// charCodes now equals [72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100]
+
+
+// const array = [36, 12, 11, 11, 11, 13, 5, 6, 36];
+function reducerIS(pv, cv) {
+    const tempList = pv.filter((element) => element > cv);
+    const len = tempList.length;
+    pv.splice(pv.length-len, 0, cv);
+    return pv;
+}
+// const result = array.reduce(reducerIS, []);
+// console.log(result);
+
+//fibo
+function reducerFibo(pv, cv, i) {
+    if(i <= 1) pv.push(1);
+    else pv.push(pv[i-1] + pv[i-2]);
+    return pv;
+}
+
+function fibo(num) {
+    const temp = new Array(num);
+    temp.fill(0);
+    const result = temp.reduce(reducerFibo, []);
+    return result;
+}
+console.log(fibo(5));
+
+// factor numbers
+function factor(num) {
+    const numList = [...Array(num).keys()].map(x => ++x);
+    const result = numList.filter(x => num % x === 0);
+    return result;
+}
+
+console.log(factor(12));
+
+// array: 
+    // all equal -> true
+    // not all equal -> false
+function checkSame(array) {
+    return array.every((e, i, a) => e === a[0]);
+}
+
+console.log(checkSame([1,1,1,1,1]));
