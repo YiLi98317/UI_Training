@@ -6,19 +6,17 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
-attribute selectors
-calc
-page option
-shadow
-price tag
-fancy page
-icon
+calculator use js
 
-tab flash -> display=fallback
+shift
+unshift
+reduce
+slice
+splice
+some
+filter
+map
 
-food shop
-    fancy style
-    icon size
-
-datatype
-datatype in js
+function:
+    default para
+    return type
