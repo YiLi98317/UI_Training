@@ -37,4 +37,4 @@ function checkIdentity(array) {
 }
 
 //check identity test case
-console.log(checkIdentity([1,1,1,1,1]));
+console.log(checkIdentity([null, 1]));
