@@ -8,7 +8,7 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 ## To-Do
 function + default method
 
-Create a new login page and add the login details with indexed db
+Create a new login page and add the login details(welcome) with indexed db
 
 
 

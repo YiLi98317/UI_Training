@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IndexedDB Welcome</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" defer>
+    </script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <h1>IndexedDB Welcome</h1>
+
+    <p>Welcome, <strong><span id="helloTag"></span></strong></p>
+    <div id="msg"></div>
+
+    <form id="search-form">
+        <div class="button-pane">
+            <input type="button" id="search-list-button" value="List database content" />
+            <input type="button" id="clear-store-button" value="Clear the whole store" class="destructive" />
+        </div>
+    </form>
+
+    <div>
+        <div id="table-msg"></div>
+        <ul id="table-list"></ul>
+    </div>
+</body>
+
+</html>

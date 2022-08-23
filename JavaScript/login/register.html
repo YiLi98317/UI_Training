@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IndexedDB Register</title>
+    <link href="main.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" defer>
+    </script>
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+    <h1>IndexedDB Register</h1>
+
+    <div id="msg"></div>
+
+<form id="register-form" target="_blank" method="post" autocomplete="off">
+        <table>
+
+            <tr>
+                <td>
+                    <label for="email" class="required">
+                        Email:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="email" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="userName" class="required">
+                        Username:
+                    </label>
+                </td>
+                <td>
+                    <input type="text" id="userName" name="userName" />
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <label for="password" class="required">
+                        Password:
+                    </label>
+                </td>
+                <td>
+                    <input type="password" id="password" name="password" />
+                </td>
+            </tr>
+
+        </table>
+
+        <div class="button-pane">
+            <input type="button" id="add-button" value="Register" />
+            <input type="reset" id="login-reset" />
+            <input type="button" id="to-login"  value="Back"/>
+        </div>
+    </form>
+
+    <form id="search-form">
+        <div class="button-pane">
+            <input type="button" id="search-list-button" value="List database content" />
+            <input type="button" id="clear-store-button" value="Clear the whole store" class="destructive" />
+        </div>
+    </form>
+
+    <div>
+        <div id="table-msg"></div>
+        <ul id="table-list"></ul>
+
+</body>
+
+</html>
