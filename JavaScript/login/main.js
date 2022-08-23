@@ -63,15 +63,6 @@
         };
     }
 
-    function getBlob(key, store, success_callback) {
-        var req = store.get(key);
-        req.onsuccess = function (evt) {
-            var value = evt.target.result;
-            if (value)
-                success_callback(value.blob);
-        };
-    }
-
     /**
      * @param {IDBObjectStore=} store
      */
@@ -128,56 +119,6 @@
         };
     }
 
-    // function setInViewer(key) {
-    //     console.log("setInViewer:", arguments);
-    //     key = Number(key);
-    //     if (key == current_view_pub_key)
-    //         return;
-
-    //     current_view_pub_key = key;
-
-    //     var store = getObjectStore(DB_STORE_NAME, 'readonly');
-    //     getBlob(key, store, function (blob) {
-    //         console.log("setInViewer blob:", blob);
-    //         var iframe = newViewerFrame();
-
-    //         // It is not possible to set a direct link to the
-    //         // blob to provide a mean to directly download it.
-    //         if (blob.type == 'text/html') {
-    //             var reader = new FileReader();
-    //             reader.onload = (function (evt) {
-    //                 var html = evt.target.result;
-    //                 iframe.load(function () {
-    //                     $(this).contents().find('html').html(html);
-    //                 });
-    //             });
-    //             reader.readAsText(blob);
-    //         } else if (blob.type.indexOf('image/') == 0) {
-    //             iframe.load(function () {
-    //                 var img_id = 'image-' + key;
-    //                 var img = $('<img id="' + img_id + '"/>');
-    //                 $(this).contents().find('body').html(img);
-    //                 var obj_url = window.URL.createObjectURL(blob);
-    //                 $(this).contents().find('#' + img_id).attr('src', obj_url);
-    //                 window.URL.revokeObjectURL(obj_url);
-    //             });
-    //         } else if (blob.type == 'application/pdf') {
-    //             $('*').css('cursor', 'wait');
-    //             var obj_url = window.URL.createObjectURL(blob);
-    //             iframe.load(function () {
-    //                 $('*').css('cursor', 'auto');
-    //             });
-    //             iframe.attr('src', obj_url);
-    //             window.URL.revokeObjectURL(obj_url);
-    //         } else {
-    //             iframe.load(function () {
-    //                 $(this).contents().find('body').html("No view available");
-    //             });
-    //         }
-
-    //     });
-    // }
-
     /**
      * @param {string} userName
      * @param {string} password
@@ -227,7 +168,6 @@
             console.log("record:", record);
             if (typeof record == 'undefined') {
                 displayActionFailure("No matching email found");
-                alert("Email or password error");
                 return;
             }
 
@@ -273,6 +213,11 @@
             var email = $('#email').val();
             if (!userName || !password || !email) {
                 displayActionFailure("Required field(s) missing");
+                return;
+            }
+            var regex = new RegExp("[\w\d]*@[\w\d]*");
+            if(!regex.test(email)) {
+                displayActionFailure("Invalid email account");
                 return;
             }
 
