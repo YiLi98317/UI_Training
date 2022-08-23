@@ -207,25 +207,6 @@
         };
     }
 
-    // /**
-    //  * @param {string} biblioid
-    //  */
-    // function deletePublicationFromBib(biblioid) {
-    //     console.log("deletePublication:", arguments);
-    //     var store = getObjectStore(DB_STORE_NAME, 'readwrite');
-    //     var req = store.index('biblioid');
-    //     req.get(biblioid).onsuccess = function (evt) {
-    //         if (typeof evt.target.result == 'undefined') {
-    //             displayActionFailure("No matching record found");
-    //             return;
-    //         }
-    //         deletePublication(evt.target.result.id, store);
-    //     };
-    //     req.onerror = function (evt) {
-    //         console.error("deletePublicationFromBib:", evt.target.errorCode);
-    //     };
-    // }
-
     /**
      * @param {number} key
      * @param {IDBObjectStore=} store
@@ -318,24 +299,6 @@
         $('#to-login').click(function (evt) {
             window.location.href = "login.html";
         });
-
-        // $('#delete-button').click(function (evt) {
-        //     console.log("delete ...");
-        //     var biblioid = $('#pub-biblioid-to-delete').val();
-        //     var key = $('#key-to-delete').val();
-
-        //     if (biblioid != '') {
-        //         deletePublicationFromBib(biblioid);
-        //     } else if (key != '') {
-        //         // Better use Number.isInteger if the engine has EcmaScript 6
-        //         if (key == '' || isNaN(key)) {
-        //             displayActionFailure("Invalid key");
-        //             return;
-        //         }
-        //         key = Number(key);
-        //         deletePublication(key);
-        //     }
-        // });
 
         $('#clear-store-button').click(function (evt) {
             clearObjectStore();
