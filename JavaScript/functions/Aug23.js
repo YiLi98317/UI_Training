@@ -28,15 +28,11 @@ console.log(diff([1, 3, 3.1, 5, 6], [1, 2, 5]));
  */
 function split(num, array) {
     const piece = array.length - num + 1;
-    if(piece <= 0) return [];
-    if(piece == 1) return array;
+    // if(piece <= 0) return [];
+    // if(piece == 1) return array;
 
-    var result = array.filter((e, i) => i < piece).reduce(function(result, curr, idx) {
-        var temp = array.filter(function(e, i) {
-            if(i < idx || i >= idx+num) return false;
-            else return true;
-        });
-        result.push(temp);
+    var result = array.slice(0, piece).reduce(function(result, curr, idx) {
+        result.push(array.slice(idx, idx+num));
 
         return result;
     }, []);

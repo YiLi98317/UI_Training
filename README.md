@@ -6,7 +6,12 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
-find difference btw 2 arrays
+choose file from local, store to indexed db
+
+
+
+
+
 
 
 
