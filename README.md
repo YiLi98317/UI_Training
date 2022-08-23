@@ -6,9 +6,39 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
-function + default method
+find difference btw 2 arrays
 
-Create a new login page and add the login details(welcome) with indexed db
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
