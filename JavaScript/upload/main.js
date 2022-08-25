@@ -8,6 +8,9 @@
     // Used to keep track of which view is displayed to avoid uselessly reloading it
     var current_view_pub_key;
 
+    // file list
+    var values = [];
+
     function openDb() {
         console.log("openDb ...");
         var req = indexedDB.open(DB_NAME, DB_VERSION);
@@ -23,7 +26,7 @@
         req.onupgradeneeded = function (evt) {
             console.log("openDb.onupgradeneeded");
             var store = evt.currentTarget.result.createObjectStore(
-                DB_STORE_NAME, {keyPath: 'id', autoIncrement: true }); // 
+                DB_STORE_NAME, { keyPath: 'id', autoIncrement: true }); // 
 
             store.createIndex('fileName', 'fileName', { unique: true });
             store.createIndex('file', 'file', { unique: false });
@@ -150,6 +153,190 @@
         console.log("resetActionStatus DONE");
     }
 
+    /**
+     * create file list using array
+     * @param {array} values 
+     */
+    function generateList(values) {
+        $('#file-selector')
+            .append(
+                $(document.createElement('label')).prop({
+                    for: 'file-list'
+                }).html('Choose your file: ')
+            )
+            .append(
+                $(document.createElement('select')).prop({
+                    id: 'file-list',
+                    name: 'file-list'
+                })
+            )
+
+        for (const val of values) {
+            $('#file-list').append($(document.createElement('option')).prop({
+                value: val,
+                text: val.charAt(0).toUpperCase() + val.slice(1)
+            }))
+        }
+    }
+
+    /**
+     * refresh the selector
+     * @param {*} store 
+     */
+    function refreshSelector(store) {
+        var list = [];
+
+        console.log("getting file list");
+
+        if (typeof store == 'undefined') store = getObjectStore(DB_STORE_NAME, 'readonly');
+
+        var req = store.openCursor();
+        req.onsuccess = function (evt) {
+            // var records = evt.target.result;
+            // console.log("records:", records);
+            var cursor = evt.target.result;
+            if (cursor) {
+                console.log("displayFileList cursor:", cursor);
+                var reqInner = store.get(cursor.key);
+                reqInner.onsuccess = function (evtInner) {
+                    var record = evtInner.target.result;
+                    console.log("displayFileList record:", record.fileName);
+                    list.push(record.fileName);
+                }
+
+                cursor.continue();
+            } else {
+                console.log("No more entries");
+            }
+
+            $('#file-list').remove();
+            $('#file-selector').append(
+                $(document.createElement('select')).prop({
+                    id: 'file-list',
+                    name: 'file-list'
+                })
+            );
+            for (const val of list) {
+                $('#file-list').append($(document.createElement('option')).prop({
+                    value: val,
+                    text: val
+                }))
+            }
+
+        };
+        req.onerror = function (evt) {
+            console.error("fectch file list error:", evt.target.errorCode);
+        };
+    }
+
+    function newViewerFrame() {
+        var viewer = $('#file-viewer');
+        viewer.empty();
+        var iframe = $('<iframe />');
+        viewer.append(iframe);
+        return iframe;
+    }
+
+    /**
+     * 
+     * @param {fileName} key 
+     * @returns 
+     */
+    function setInViewer(key) {
+        console.log("setInViewer:", arguments);
+
+        var store = getObjectStore(DB_STORE_NAME, 'readonly');
+
+        var req = store.index("fileName").get(key);
+        req.onsuccess = function (evt) {
+            var blob = evt.target.result.file;
+            console.log("setInViewer file:", blob);
+
+            var iframe = newViewerFrame();
+
+            // It is not possible to set a direct link to the
+            // blob to provide a mean to directly download it.
+            if (blob.type == 'text/html') {
+                var reader = new FileReader();
+                reader.onload = (function (evt) {
+                    var html = evt.target.result;
+                    iframe.load(function () {
+                        $(this).contents().find('html').html(html);
+                    });
+                });
+                reader.readAsText(blob);
+            } else if (blob.type.indexOf('image/') == 0) {
+                iframe.load(function () {
+                    var img_id = 'image-' + key;
+                    var img = $('<img id="' + img_id + '"/>');
+                    $(this).contents().find('body').html(img);
+                    var obj_url = window.URL.createObjectURL(blob);
+                    $(this).contents().find('#' + img_id).attr('src', obj_url);
+                    window.URL.revokeObjectURL(obj_url);
+                });
+            } else if (blob.type == 'application/pdf') {
+                $('*').css('cursor', 'wait');
+                var obj_url = window.URL.createObjectURL(blob);
+                iframe.load(function () {
+                    $('*').css('cursor', 'auto');
+                });
+                iframe.attr('src', obj_url);
+                window.URL.revokeObjectURL(obj_url);
+            } else {
+                iframe.load(function () {
+                    $(this).contents().find('body').html("No view available");
+                });
+            }
+        };
+        req.onerror = function (evt) {
+            console.error("open file -> search file error", evt.target.errorCode);
+        };
+    }
+
+    /**
+     * open selected file in web
+     */
+    function openFileWeb() {
+        var file = $('#file-list').val();
+        console.log("current selected file: ", file);
+        // Resetting the iframe so that it doesn't display previous content
+        newViewerFrame();
+
+        setInViewer(file);
+    }
+
+    /**
+     * open file locally
+     */
+    function openFileLocal() {
+        // let indexedObj = { name: 'img.jpg', data: 'ArrayBuffer(12342)' }; // suppose this is your indexedDB object
+        //get file from indexed db 
+        var file = $('#file-list').val();
+        console.log("current selected file: ", file);
+        var store = getObjectStore(DB_STORE_NAME, 'readonly');
+
+        var req = store.index("fileName").get(file);
+        req.onsuccess = function (evt) {
+            var blob = evt.target.result.file;
+            console.log("download file:", blob);
+
+            //prepare for download
+            const URL = window.URL || window.webkitURL;
+            const a = document.createElement('a');
+            document.body.appendChild(a);
+            a.download = file;
+            a.href = URL.createObjectURL(blob);
+            a.click();
+            URL.revokeObjectURL(a.href);
+            a.remove();
+        };
+        req.onerror = function (evt) {
+            console.error("open file -> search file error", evt.target.errorCode);
+        };
+
+
+    }
+
     function addEventListeners() {
         console.log("addEventListeners");
 
@@ -182,9 +369,21 @@
             displayFileList();
         });
 
+        $('#list-refresh').click(function (evt) {
+            refreshSelector();
+        });
+
+        $('#open-file-local').click(function (evt) {
+            openFileLocal();
+        });
+
+        $('#open-file-web').click(function (evt) {
+            openFileWeb();
+        });
+
     }
 
     openDb();
     addEventListeners();
-
+    generateList(values);
 })(); // Immediately-Invoked Function Expression (IIFE)

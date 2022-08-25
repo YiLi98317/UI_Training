@@ -16,7 +16,7 @@
 
     <form id="login-form" target="_blank" method="post" autocomplete="off">
         <table>
-            
+
             <tr>
                 <td>
                     <label for="fileName" class="required">
@@ -29,7 +29,7 @@
                     <input type="text" id="fileName" name="fileName" />
                 </td>
             </tr>
-            
+
             <tr>
                 <td>
                     <label for="file" class="required">
@@ -40,7 +40,7 @@
                     <input type="file" id="file" name="file">
                 </td>
             </tr>
-        </table> 
+        </table>
 
         <div class="button-pane">
             <input type="submit" id="upload-button" value="Upload">
@@ -48,6 +48,17 @@
             <!-- <input type="button" id="to-register" value="Upload" /> -->
         </div>
     </form>
+
+    <form id="file-selector-form">
+        <div id="file-selector"></div>
+        <div class="button-pane">
+            <input type="button" id="list-refresh" value="Refresh">
+            <input type="button" id="open-file-local" value="Download">
+            <input type="button" id="open-file-web" value="Open in Web">
+        </div>
+    </form>
+
+    <div id="file-viewer"></div>
 
     <form id="search-form">
         <div class="button-pane">

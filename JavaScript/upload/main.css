@@ -66,3 +66,14 @@ h1 {
 .destructive:active {
     background-color: red;
 }
+
+select {
+    margin-bottom: 5%;
+}
+
+iframe {
+    width: 60%;
+    height: 720px;
+    margin-left: 20%;
+
+}
