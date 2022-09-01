@@ -1,7 +1,17 @@
 .container, h1 {
     text-align: center;
 }
+
 .container.buttons {
     width:200px;
     height:200px;
+}
+
+.vertical {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 50%;
+    margin-left: 25%;
 }
