@@ -2,34 +2,20 @@
 <html>
 
 <head>
-    <title>Online Assessment</title>
+    <title>Online Assessment Result</title>
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"
         defer></script>
-    <script src="src/jquery.csv.js" defer></script>
-    <script src="assessment.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="result.js" defer></script>
     </script>
 </head>
 
 
-<body class="assessmentBody">
-    <h1>Assessment Page</h1>
-    <!-- <button type="button" onclick="loadData()">Load Spreadsheet Data</button>
-    <br> -->
-
-    <label for="quizFile">Choose a spreadsheet to generate quiz from local:</label>
-    <br>
-
-    <input type="file" id="quizFile" name="quizFile" accept=".csv">
-    <br>
-
-    <div id="btnPanel">
-        <input type="reset" id="reset">
-        <button id="generateQuizBtn">Generate</button>
-        <button id="submitQuizBtn">Submit</button>
-    </div>
-
-    <div id="quizContainer" class="vertical"></div>
+<body class="resultBody">
+    <h1>Assessment Result</h1>
+    <canvas id="myChart"></canvas>
+    <button id="quit">Quit</button>
 </body>
 
 </html>
