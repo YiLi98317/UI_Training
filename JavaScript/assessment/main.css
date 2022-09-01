@@ -1,0 +1,7 @@
+.container, h1 {
+    text-align: center;
+}
+.container.buttons {
+    width:200px;
+    height:200px;
+}
