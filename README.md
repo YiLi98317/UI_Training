@@ -6,10 +6,16 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
+js:
+promises
+async and await
+callbacks
 
 
-
-
+file local browse(Node.js solution)
+radio button
+result detail
+result history
 
 
 
