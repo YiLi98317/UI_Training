@@ -9,12 +9,16 @@ h1 {
 }
 
 .vertical {
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-content: center;
-    flex-direction: column;
+    flex-direction: column; */
     width: 50%;
     margin-left: 25%;
+}
+
+input[type="radio"], label {
+    vertical-align: middle;
 }
 
 #myChart {

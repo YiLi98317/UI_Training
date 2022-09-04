@@ -27,29 +27,45 @@
                 console.log("quiz element: ", quizElement);
                 console.log("quiz ID: ", quizElement['ID']);
                 $('#quizContainer')
-                    .append(
-                        $(document.createElement('label')).prop({
-                            for: quizElement.ID
-                        }).html(quizElement.Question)
-                    )
-                    .append(
-                        $(document.createElement('select')).prop({
-                            id: quizElement.ID,
-                            name: quizElement.ID
-                        })
-                    )
+                    // .append(
+                    //     $(document.createElement('label')).prop({
+                    //         for: quizElement.ID,
+                    //         id: quizElement.ID // added
+                    //     }).html(quizElement.Question)
+                    // )
+                    // .append(
+                    //     $(document.createElement('select')).prop({
+                    //         id: quizElement.ID,
+                    //         name: quizElement.ID
+                    //     })
+                    // )
+                    .append("<p>"+quizElement.Question+"</p>");
 
                 for (var j = 1; j < 5; j++) {
                     var answer = 'Answer' + j;
                     console.log("Option num: ", answer);
                     console.log("Option desc: ", quizElement[answer]);
+                    console.log("Option ID: ", quizElement.ID);
                     var selectDropdown = '#' + quizElement.ID;
                     console.log("typeof: ", typeof quizElement[answer]);
-                    $(selectDropdown)
-                        .append($(document.createElement('option')).prop({
-                            value: quizElement[answer],
-                            text: quizElement[answer]
-                        }))
+                    // $(selectDropdown)
+                        // .append($(document.createElement('option')).prop({
+                        //     value: quizElement[answer],
+                        //     text: quizElement[answer]
+                        // }))
+                    $('#quizContainer')
+                        .append(
+                            $('<input>').prop({
+                                type: 'radio',
+                                id: answer,
+                                name: quizElement.ID,
+                                value: quizElement[answer]
+                            })
+                        ).append(
+                            $('<label>').prop({
+                                for: answer
+                            }).html(quizElement[answer])
+                        )
                 }
             }
         }
@@ -63,8 +79,14 @@
         for (var i = 0; i < data.length; i++) {
             var quizID = i + 1;
             var answer = $('#Q' + quizID).val();
+            const radioString = 'input[name="Q'+quizID+'"]:checked';
+            console.log(radioString);
+            var answerRadio = $(radioString).val();
+            console.log("Q#: ", quizID);
+            console.log("answer: ", answerRadio);
             var correct = data[i].Correct;
             if (answer === correct) correctNum++;
+            if (answerRadio === correct) correctNum++;
         }
         localStorage.setItem("correctNum", correctNum);
     }
@@ -111,7 +133,7 @@
         var i = 0;
         for (const file of files) {
             console.log(file);
-            if(file.type !== 'text/csv') {
+            if (file.type !== 'text/csv') {
                 i++;
                 continue;
             }
@@ -131,8 +153,13 @@
 
         $('#generateQuizBtn').click(function (evt) {
             console.log("read file...");
-            var quizFile = $('#quizFile').get(0).files[0];
-            var quizFileFromList = fileList[$('#file-list').val()];
+            try {
+                var quizFile = $('#quizFile').get(0).files[0];
+                var quizFileFromList = fileList[$('#file-list').val()];
+            } catch(e) {
+                console.log(e);
+            }
+            
             if (!quizFile && !quizFileFromList) {
                 alert("No file selected!");
                 return;
@@ -141,8 +168,8 @@
             console.log("quizFileFromList:", quizFileFromList);
             $('#generateQuizBtn').hide();
             $('#submitQuizBtn').show();
-            if(quizFile) generateQuiz(quizFile);
-            if(quizFileFromList) generateQuiz(quizFileFromList);
+            if (quizFile) generateQuiz(quizFile);
+            if (quizFileFromList) generateQuiz(quizFileFromList);
         });
 
         $('#reset').click(function (evt) {
@@ -155,9 +182,9 @@
             gradeQuiz();
             console.log("submit...");
             window.location.replace("result.html");
-        }); 
+        });
 
-        $('#dirPicker').change(function(evt) {
+        $('#dirPicker').change(function (evt) {
             refreshList(evt.target.files);
         });
     }
