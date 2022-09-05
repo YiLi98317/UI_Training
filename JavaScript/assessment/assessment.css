@@ -1,0 +1,91 @@
+#quizContainer.radio {
+    display: block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: left;
+}
+
+#quizContainer.radio+.radio {
+    margin-top: 12px;
+}
+
+#quizContainer.radio input {
+    display: none;
+}
+
+#quizContainer.radio #quizContainer.input+span {
+    display: inline-block;
+    position: relative;
+    padding-left: 30px;
+}
+
+#quizContainer.radio #quizContainer.input+span:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+    margin-right: 5px;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ccc;
+    background: #fff;
+}
+
+#quizContainer.radio #quizContainer.input+span:after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #222;
+    position: absolute;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    opacity: 0;
+    transform: scale(0, 0);
+    transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
+}
+
+#quizContainer.radio #quizContainer.input:checked+span:after {
+    opacity: 1;
+    transform: scale(1, 1);
+}
+
+/* END CHECKBOX STYLE */
+html {
+    min-height: 100%;
+    background: #4FCB9C;
+    border: 120px solid; 
+    border-top-color: #205A44;
+    border-left-color: #236C50;
+    border-bottom-color: #80DFBA;
+    border-right-color: #6DD5AD; 
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+#quizContainer {
+    width: 600px;
+    height: auto;
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 30px 140px;
+    text-align: center;
+    border-radius: 3px;
+    background: #fff;
+    box-shadow: 0px 13px 10px -13px #000, 0px 7px 10px rgba(0, 0, 0, 0.1);
+}

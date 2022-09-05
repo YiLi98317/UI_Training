@@ -4,6 +4,8 @@
  * @returns 
  */
  function register(event) {
+    event.preventDefault();
+
     const userName = document.getElementById("userName");
     const password = document.getElementById("password");
 

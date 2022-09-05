@@ -4,6 +4,7 @@
  * @returns 
  */
 function login(event) {
+  event.preventDefault();
   const userName = document.getElementById("userName");
   const password = document.getElementById("password");
 
