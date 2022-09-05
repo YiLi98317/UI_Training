@@ -85,10 +85,13 @@
             console.log("Q#: ", quizID);
             console.log("answer: ", answerRadio);
             var correct = data[i].Correct;
+            data[i].Answer = answerRadio;
+            console.log("answer in data: ", data[i].Answer);
             if (answer === correct) correctNum++;
             if (answerRadio === correct) correctNum++;
         }
         localStorage.setItem("correctNum", correctNum);
+        localStorage.setItem("data", JSON.stringify(data));
     }
 
     /**
@@ -192,4 +195,6 @@
     $('#submitQuizBtn').hide();
     addEventListeners();
     generateList(array);
+    
 })();
+

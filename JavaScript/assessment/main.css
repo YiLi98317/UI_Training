@@ -9,10 +9,6 @@ h1 {
 }
 
 .vertical {
-    /* display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-direction: column; */
     width: 50%;
     margin-left: 25%;
 }
@@ -31,4 +27,8 @@ input[type="radio"], label {
 #quit {
     text-align: center;
     width: 10%;
+}
+
+.left {
+    text-align: left;
 }

@@ -13,8 +13,8 @@ callbacks
 
 
 file local browse(leak Node.js solution)
-result detail
 result history
+css the page
 
 
 
