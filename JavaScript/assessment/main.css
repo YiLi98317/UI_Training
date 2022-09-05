@@ -13,7 +13,8 @@ h1 {
     margin-left: 25%;
 }
 
-input[type="radio"], label {
+input[type="radio"],
+label {
     vertical-align: middle;
 }
 
@@ -35,4 +36,21 @@ input[type="radio"], label {
 
 .margin-left {
     margin-left: 5%;
+}
+
+.center {
+    text-align: center;
+}
+
+#resultDetail {
+    margin-top: 15%;
+}
+
+#quit {
+    position: fixed;
+    bottom: 15%;
+    right: 50%;
+    width: 100px;
+    border: 3px solid red;
+
 }
