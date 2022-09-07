@@ -27,18 +27,6 @@
                 console.log("quiz element: ", quizElement);
                 console.log("quiz ID: ", quizElement['ID']);
                 $('#quizContainer')
-                    // .append(
-                    //     $(document.createElement('label')).prop({
-                    //         for: quizElement.ID,
-                    //         id: quizElement.ID // added
-                    //     }).html(quizElement.Question)
-                    // )
-                    // .append(
-                    //     $(document.createElement('select')).prop({
-                    //         id: quizElement.ID,
-                    //         name: quizElement.ID
-                    //     })
-                    // )
                     .append("<p>"+quizElement.Question+"</p>");
 
                 for (var j = 1; j < 5; j++) {
@@ -48,11 +36,6 @@
                     console.log("Option ID: ", quizElement.ID);
                     var selectDropdown = '#' + quizElement.ID;
                     console.log("typeof: ", typeof quizElement[answer]);
-                    // $(selectDropdown)
-                        // .append($(document.createElement('option')).prop({
-                        //     value: quizElement[answer],
-                        //     text: quizElement[answer]
-                        // }))
                     $('#quizContainer')
                         .append(
                             $('<input>').prop({
@@ -157,13 +140,13 @@
         $('#generateQuizBtn').click(function (evt) {
             console.log("read file...");
             try {
-                var quizFile = $('#quizFile').get(0).files[0];
                 var quizFileFromList = fileList[$('#file-list').val()];
+                var quizFile = $('#quizFile').get(0).files[0];  
             } catch(e) {
                 console.log(e);
             }
             
-            if (!quizFile && !quizFileFromList) {
+            if (!quizFileFromList && !quizFile) {
                 alert("No file selected!");
                 return;
             }

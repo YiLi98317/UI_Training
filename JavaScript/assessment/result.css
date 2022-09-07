@@ -1,43 +1,54 @@
 /* END CHECKBOX STYLE */
 html {
-    min-height: 100%;
-    background: #4FCB9C;
-    border: 120px solid; 
-    border-top-color: #205A44;
-    border-left-color: #236C50;
-    border-bottom-color: #80DFBA;
-    border-right-color: #6DD5AD; 
-    box-sizing: border-box;
+  min-height: 100%;
+  background: #4FCB9C;
+  border: 120px solid;
+  border-top-color: #205A44;
+  border-left-color: #236C50;
+  border-bottom-color: #80DFBA;
+  border-right-color: #6DD5AD;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 * {
-    box-sizing: border-box;
-  }
-  
-  /* Create two equal columns that floats next to each other */
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: auto;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
   .column {
-    float: left;
-    width: 50%;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    width: 100%;
   }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 600px) {
-    .column {
-      width: 100%;
-    }
-  }
+}
+
+#resultDetail, #assessmentResult {
+  height: auto;
+}
+
+#assessmentResult {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 15px;
+}
