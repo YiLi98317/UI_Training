@@ -7,14 +7,10 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 ## To-Do
 js:
-Generator
-DOM and its events
-DOM manipulation
-Event emitters
 
 
-file local browse(leak Node.js solution)
-result history
+JWT
+
 
 
 
