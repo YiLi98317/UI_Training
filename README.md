@@ -6,9 +6,6 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
-js:
-
-
 JWT
 
 
