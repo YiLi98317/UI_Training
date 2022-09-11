@@ -10,8 +10,14 @@ JWT refresh
 login using JWT
 mango db
 
-event emitter
-session and cookie
+
+
+complete the login flow task
+adding middle ware and joi validation
+adding nodejs codes
+what is unit test cases
+Jest unit test cases for your js files
+
 
 
 
