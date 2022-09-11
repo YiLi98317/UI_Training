@@ -6,13 +6,22 @@ https://yili98317.github.io/UI_Training/blog/blog.html
 
 
 ## To-Do
-JWT
+JWT refresh
+login using JWT
+mango db
+
+event emitter
+session and cookie
 
 
 
 
 
 
+
+
+middleware
+joi validation
 
 
 

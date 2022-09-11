@@ -1,38 +1,56 @@
 const jwt = require('jsonwebtoken')
 
-const jwtKey = 'my_secret_key'
-const jwtExpirySeconds = 300
+const jwtKey = 'assessmentProject';
+const jwtExpirySeconds = 60*60*2;
 
+// should be replaced by APIs getting the cridencial
 const users = {
-  user1: 'password1',
-  user2: 'password2'
+  'yi': 'yi',
+  'user2': 'password2'
 }
 
 const signIn = (req, res) => {
-  console.log("sign in...")
+  console.log("sign in...");
+  console.log("req.body: ", req.body);
   // Get credentials from JSON body
-  const { username, password } = req.body
-  console.log("username: ", username);
+  const { userName, password } = req.body;
+  console.log("userName: ", userName);
   console.log("password: ", password);
-  if (!username || !password || users[username] !== password) {
+
+  if (!userName || !password || users[userName] !== password) {
     // return 401 error is username or password doesn't exist, or if password does
     // not match the password in our records
-    console.log("error");
-    return res.status(401).end();
+    console.log("error, account not found");
+    
+    return res.redirect("/register.html");
+    // res.status(401).end();
   }
 
-  // Create a new token with the username in the payload
+  // prevent bad access using localstorage
+  if (userName == "currentID") {
+    window.alert("Invalid ID");
+    window.location.replace("register.html");
+    return;
+  }
+
+// Create a new token with the username in the payload
   // and which expires 300 seconds after issue
-  const token = jwt.sign({ username }, jwtKey, {
+  const token = jwt.sign({ userName }, jwtKey, {
     algorithm: 'HS256',
     expiresIn: jwtExpirySeconds
   })
-  console.log('token:', token)
+  console.log('token:', token);
 
   // set the cookie as the token string, with a similar max age as the token
   // here, the max age is in milliseconds, so we multiply by 1000
-  res.cookie('token', token, { maxAge: jwtExpirySeconds * 1000 })
-  res.end()
+  res.cookie('token', token, { maxAge: jwtExpirySeconds * 1000 });
+  var response = {
+    redirect: "assessment.html",
+    token: token
+  }
+  // res.redirect("/assessment.html?valid=" + string);
+  // res.send(res.body);
+  return res.json(response);
 }
 
 const welcome = (req, res) => {
@@ -41,7 +59,7 @@ const welcome = (req, res) => {
 
   // if the cookie is not set, return an unauthorized error
   if (!token) {
-    return res.status(401).end()
+    return res.status(401).end();
   }
 
   var payload
@@ -105,8 +123,29 @@ const refresh = (req, res) => {
   res.end()
 }
 
+const storeJWT = function(req, res) {
+  console.log(req.body);
+};
+
+const testPOST = function(req, res) {
+  console.log("test POST");
+  console.log(req.body);
+  const { userName, password } = req.body;
+  console.log("userName: ", userName);
+  console.log("password: ", password);
+
+  res.send(req.body);
+};
+
+const start = function (req, res) {
+  res.sendFile(publicDir + 'login.html');
+};
+
 module.exports = {
   signIn,
   welcome,
-  refresh
+  refresh,
+  storeJWT,
+  testPOST,
+  start
 }
