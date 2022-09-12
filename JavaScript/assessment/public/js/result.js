@@ -1,3 +1,7 @@
+// import { checkToken } from './checkToken.js';
+
+// checkToken("result.html", "login.html");
+
 const data = JSON.parse(localStorage.getItem("data"));
 const quitBtn = document.getElementById("quit");
 

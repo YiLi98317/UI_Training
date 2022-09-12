@@ -1,4 +1,4 @@
-import { checkToken } from './checkToken.js';
+// import { checkToken } from './checkToken.js';
 
 /**
  * login
@@ -22,7 +22,7 @@ function login(event) {
   })
 }
 
-checkToken("assessment.html", "login.html");
+// checkToken("assessment.html", "login.html");
 
 const loginButton = document.getElementById("loginButton");
 

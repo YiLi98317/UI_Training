@@ -1,4 +1,4 @@
-import { checkToken } from './checkToken.js';
+// import { checkToken } from './checkToken.js';
 (function () {
     //global variable
     var totalNum = 0;
@@ -176,7 +176,7 @@ import { checkToken } from './checkToken.js';
         });
     }
 
-    checkToken("assessment.html", "login.html"); // token check
+    // checkToken("assessment.html", "login.html"); // token check
     $('#submitQuizBtn').hide();
     addEventListeners();
     generateList(array);

@@ -1,8 +1,10 @@
 function checkToken(goodTarget, badTarget) {
     const token = localStorage.getItem("token");
+    const currPath = window.location.pathname;
     if(!token) {
         console.log("client side, no token");
-        return false;
+        if(currPath === '/' + badTarget) return;
+        else window.location = badTarget;
     }
 
     axios.post('./check-token', {
@@ -12,7 +14,6 @@ function checkToken(goodTarget, badTarget) {
         const data = res.data;
         console.log("client side, response data: ", data);
         if(data.status == "1") {
-            const currPath = window.location.pathname;
             if(currPath === '/' + goodTarget) return;
             else window.location = goodTarget;
         } else {
@@ -22,8 +23,8 @@ function checkToken(goodTarget, badTarget) {
     })
 };
 
-export {
-    checkToken
-};
+// export {
+//     checkToken
+// };
 
-// console.log("checkToken: ", checkToken.call(this));
+checkToken(window.location.pathname === '/result.html' ? "result.html" : "assessment.html", "login.html");
