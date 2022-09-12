@@ -1,16 +1,17 @@
 const jwt = require('jsonwebtoken')
 
 const jwtKey = 'assessmentProject';
-const jwtExpirySeconds = 10; //60*60*2 2 hours
+const jwtExpirySeconds = 60*60*2; // 2 hours 10 sec as test
 
 // should be replaced by APIs getting the cridencial
 const users = {
   'yi': 'yi',
-  'user2': 'password2'
+  'testUsr': 'testPwd'
 }
 
 const signIn = (req, res) => {
   console.log("sign in...");
+  // console.log("res: ", res);
   console.log("req.body: ", req.body);
   // Get credentials from JSON body
   const { userName, password } = req.body;
@@ -21,8 +22,8 @@ const signIn = (req, res) => {
     // return 401 error is username or password doesn't exist, or if password does
     // not match the password in our records
     console.log("error, account not found");
-    
-    return res.redirect("/register.html");
+    res.redirect("/register.html");
+    return false;
     // res.status(401).end();
   }
 
@@ -50,7 +51,8 @@ const signIn = (req, res) => {
   }
   // res.redirect("/assessment.html?valid=" + string);
   // res.send(res.body);
-  return res.json(response);
+  res.json(response);
+  return true;
 }
 
 const welcome = (req, res) => {
@@ -137,9 +139,9 @@ const testPOST = function(req, res) {
   res.send(req.body);
 };
 
-// const start = function (req, res) {
-//   res.sendFile(publicDir + 'login.html');
-// };
+const start = function (req, res) {
+  res.sendFile(publicDir + 'login.html');
+};
 
 const checkToken = function (req, res) {
   console.log("check token...");
@@ -168,6 +170,6 @@ module.exports = {
   refresh,
   storeJWT,
   testPOST,
-  // start,
+  start,
   checkToken
 }

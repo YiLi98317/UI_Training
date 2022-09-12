@@ -30,7 +30,9 @@ joi validation
 
 
 
-
+-> basic of react
+-> lifecycle of react
+-> what is props
 
 
 
