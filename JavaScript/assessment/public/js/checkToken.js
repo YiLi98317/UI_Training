@@ -11,10 +11,13 @@ function checkToken(goodTarget, badTarget) {
     .then(function(res) {
         const data = res.data;
         console.log("client side, response data: ", data);
-        if(data.status == "1") window.location = "assessment.html";
-        else {
+        if(data.status == "1") {
+            const currPath = window.location.pathname;
+            if(currPath === '/' + goodTarget) return;
+            else window.location = goodTarget;
+        } else {
             localStorage.removeItem("token");
-            window.location = "login.html";
+            window.location = badTarget;
         }
     })
 };
