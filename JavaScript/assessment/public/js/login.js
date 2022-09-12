@@ -1,4 +1,4 @@
-// const axios = require('axios');
+import { checkToken } from './checkToken.js';
 
 /**
  * login
@@ -20,24 +20,13 @@ function login(event) {
     localStorage.setItem("token", data.token);
     window.location = data.redirect;
   })
-
-  // if (userName.value == "currentID") {
-  //   window.alert("Invalid ID");
-  //   window.location.assign("register.html");
-  //   return;
-  // }
-
-  // var localPwd = localStorage.getItem(userName.value);
-
-  // if (localPwd && password.value == localPwd) {
-  //   localStorage.setItem("currentID", userName.value);
-  //   window.location.replace("assessment.html");
-  // } else {
-  //   window.alert("Account not found");
-  //   window.location.assign("register.html");
-  // }
 }
+
+checkToken("assessment.html", "login.html");
 
 const loginButton = document.getElementById("loginButton");
 
+
 loginButton.addEventListener("click", login);
+
+

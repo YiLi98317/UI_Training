@@ -4,18 +4,20 @@ const cookieParser = require('cookie-parser');
 const rootDir = "/Users/liyi/Desktop/Work/UI_Training/JavaScript/assessment/";
 const publicDir = rootDir + "public/";
 
-const { signIn, welcome, refresh, storeJWT, testPOST, start } = require('./handlers');
+const { signIn, welcome, refresh, storeJWT, testPOST, start, checkToken } = require('./handlers');
 
 const app = express();
 // app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-app.get('/', start);
+// handle API
+app.get('/', function (req, res) {
+    res.sendFile(publicDir + 'login.html');
+  });
 app.use(express.static(publicDir));
-
-//login form
-app.post('/login-form-submit', signIn);
+app.post('/check-token', checkToken); // check token
+app.post('/login-form-submit', signIn); //login form
 // app.get('/login-form-submit', storeJWT);
 
 app.post('/test', testPOST);

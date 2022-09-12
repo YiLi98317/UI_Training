@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 
 const jwtKey = 'assessmentProject';
-const jwtExpirySeconds = 60*60*2;
+const jwtExpirySeconds = 10; //60*60*2 2 hours
 
 // should be replaced by APIs getting the cridencial
 const users = {
@@ -137,8 +137,29 @@ const testPOST = function(req, res) {
   res.send(req.body);
 };
 
-const start = function (req, res) {
-  res.sendFile(publicDir + 'login.html');
+// const start = function (req, res) {
+//   res.sendFile(publicDir + 'login.html');
+// };
+
+const checkToken = function (req, res) {
+  console.log("check token...");
+  console.log("req.body: ", req.body);
+  const {token} = req.body;
+
+  var payload;
+  try {
+    payload = jwt.verify(token, jwtKey);
+  } catch(e) {
+    console.log("server side, token not verified: token expired");
+    return res.json({
+      status: "0"
+    });
+  }
+
+  console.log("token verified");
+  return res.json({
+    status: "1"
+  })
 };
 
 module.exports = {
@@ -147,5 +168,6 @@ module.exports = {
   refresh,
   storeJWT,
   testPOST,
-  start
+  // start,
+  checkToken
 }
