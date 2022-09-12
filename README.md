@@ -16,14 +16,6 @@ adding middle ware and joi validation
 what is unit test cases
 Jest unit test cases for your js files
 
-
-
-
-
-
-
-
-
 middleware
 joi validation
 
