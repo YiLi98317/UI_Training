@@ -25,6 +25,7 @@ new Chart("myChart", {
 
 
 quitBtn.addEventListener("click", function (evt) {
+    localStorage.removeItem("token");
     window.location.replace("login.html");
 });
 

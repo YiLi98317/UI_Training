@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const createHttpError = require('http-errors');
+const Validator = require('./middlewares/Validator')
 
 const rootDir = "/Users/liyi/Desktop/Work/UI_Training/JavaScript/assessment/";
 const publicDir = rootDir + "public/";
@@ -30,7 +31,7 @@ app.get('/', function (req, res) {
   });
 app.use(express.static(publicDir));
 app.post('/check-token', checkToken); // check token
-app.post('/login-form-submit', signIn); //login form
+app.post('/login-form-submit', Validator('login'), signIn); //login form , 
 app.post('/test', testPOST); // a test endpoint
 
 // unused API

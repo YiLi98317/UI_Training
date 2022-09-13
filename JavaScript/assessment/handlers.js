@@ -3,9 +3,13 @@ const jwt = require('jsonwebtoken')
 const jwtKey = 'assessmentProject';
 const jwtExpirySeconds = 60*60*2; // 2 hours 10 sec as test
 
+const rootDir = "/Users/liyi/Desktop/Work/UI_Training/JavaScript/assessment/";
+const publicDir = rootDir + "public/";
+
 // should be replaced by APIs getting the cridencial
 const users = {
   'yi': 'yi',
+  'yi@gmail.com': 'yi123',
   'testUsr': 'testPwd'
 }
 
@@ -22,7 +26,12 @@ const signIn = (req, res) => {
     // return 401 error is username or password doesn't exist, or if password does
     // not match the password in our records
     console.log("error, account not found");
-    res.redirect("/register.html");
+    var response = {
+      redirect: "register.html",
+      token: ""
+    }
+    res.json(response);
+    // res.redirect('register.html');
     return false;
     // res.status(401).end();
   }
