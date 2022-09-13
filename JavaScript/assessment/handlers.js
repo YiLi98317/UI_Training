@@ -30,9 +30,9 @@ const signIn = (req, res) => {
       redirect: "register.html",
       token: ""
     }
-    res.json(response);
+    return res.json(response);
     // res.redirect('register.html');
-    return false;
+    // return false;
     // res.status(401).end();
   }
 
@@ -60,8 +60,8 @@ const signIn = (req, res) => {
   }
   // res.redirect("/assessment.html?valid=" + string);
   // res.send(res.body);
-  res.json(response);
-  return true;
+  return res.json(response);
+  // return true;
 }
 
 const welcome = (req, res) => {

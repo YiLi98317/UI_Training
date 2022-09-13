@@ -42,7 +42,7 @@ test('sign in status using correct credencials', () => {
     const result = signIn(mockedReq, mockedRes, mockedNext);
     
     expect(mockedRes.json).toBeCalledWith(nextMockedRes.data);
-    expect(result).toBe(true);
+    // expect(result).toBe(true);
 });
 
 test('sign in status using incorrect credencials', () => {
@@ -50,11 +50,17 @@ test('sign in status using incorrect credencials', () => {
     const mockedReq = mockReq();
     mockedReq.body.userName = "testAdmin";
     const mockedRes = mockRes();
+    const nextMockedRes = {
+        data: {
+            redirect: "register.html",
+            token: ""
+        }
+    };
 
     const result = signIn(mockedReq, mockedRes, mockedNext);
     
-    expect(mockedRes.redirect).toBeCalledWith("/register.html");
-    expect(result).toBe(false);
+    expect(mockedRes.json).toBeCalledWith(nextMockedRes.data);
+    // expect(result).toBe(false);
 });
 
 test('token check using correct token', () => {
