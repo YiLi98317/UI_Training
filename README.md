@@ -15,7 +15,10 @@ mango db
 react blog
 mui
 
-
+js vs jsx
+reuse
+poster in react < 20 line
+props
 
 
 
