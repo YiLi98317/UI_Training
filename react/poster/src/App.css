@@ -1,0 +1,94 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-image: url("https://img.finalfantasyxiv.com/lds/promo/h/g/yAhkYrzwI7-C_PVf9LP32Bu3_A.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: contain;
+
+}
+
+.text {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 80px;
+  color: #f2b388;
+  margin-top: 80%;
+  line-height: 0%;
+  text-shadow: 2px 2px 4px #000000;
+  /* background: -webkit-linear-gradient(#f2b388, #f2b388);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.title {
+  font-size: 25px;
+  color: #e4ebef;
+  line-height: 40%;
+  text-shadow: 2px 2px 4px #000000;
+  animation: flip 2s infinite;
+}
+
+.title li {
+  display: inline-block;
+}
+
+.online {
+  font-size: 15px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.copyright {
+  font-size: small;
+}
+
+.title2 {
+  color: #f2d8a3;
+}
+
+@keyframes flip {
+  0%,
+  80% {
+      transform: rotateY(360deg)
+      }
+}

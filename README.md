@@ -12,13 +12,11 @@ mango db
 
 
 
-react blog
-mui
 
+mui
 js vs jsx
-reuse
 poster in react < 20 line
-props
+how to add same component in react
 
 
 
