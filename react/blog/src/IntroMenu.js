@@ -9,10 +9,10 @@ function IntroMenu(props) {
           <AboutCard />
 
           {/* <!-- Posts --> */}
-          <Posts />
+          <Posts posts={props.intro.posts} />
 
           {/* <!-- Labels / tags --> */}
-          <Labels />
+          <Labels labels={props.intro.labels} />
 
           {/* <!-- END Introduction Menu --> */}
         </div>

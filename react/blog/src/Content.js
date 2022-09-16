@@ -5,11 +5,11 @@ function Content(props) {
     return(
         <div class="content">
             {/* <!-- Grid --> */}
-            <BlogGird />
+            <BlogGird blogs={props.content.blogs} />
             {/* <!-- END GRID --> */}
 
             {/* <!-- Introduction menu --> */}
-            <IntroMenu />
+            <IntroMenu intro={props.content.intro} />
 
             {/* <!-- END content --> */}
         </div>

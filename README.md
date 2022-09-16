@@ -15,9 +15,8 @@ mango db
 
 mui
 js vs jsx
-poster in react < 20 line
-how to add same component in react
-
+calculator in react
+how to transform props btw components
 
 
 
