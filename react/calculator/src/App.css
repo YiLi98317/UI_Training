@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+
+
+body {
+  background-color: #FF9E0D;
+}
+
+table {
+  margin: auto;
+  background-color: #9dd2ea;
+  width: 295px;
+  height: 325px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+#calculator {
+  position: absolute;
+  max-width: 60%;
+  left: 58%;
+  top: 10%;
+}
+
+input {
+  outline: 0;
+  position: relative;
+  left: 5px;
+  top: 5px;
+  border: 0;
+  color: #495069;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 60px;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  font-size: 20px;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  outline: 0;
+  position: relative;
+  left: 5px;
+  top: 5px;
+  border: 0;
+  color: #495069;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 60px;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  font-size: 20px;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+input:hover {
+  border: 0 solid #000;
+  color: yellow;
+  background-color: #8F5FD4;
+  border-radius: 4px;
+  width: 60px;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  font-size: 20px;
+  box-shadow: 0 4px #644294;
+  /* animation: flip .5s 1; */
+}
+
+button:hover {
+  border: 0 solid #000;
+  color: yellow;
+  background-color: #8F5FD4;
+  border-radius: 4px;
+  width: 60px;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  font-size: 20px;
+  box-shadow: 0 4px #644294;
+  /* animation: flip .5s 1; */
+}
+
+input:active {
+  top: 4px;
+  border: 0 solid #000;
+  color: #495069;
+  background-color: #8F5FD4;
+  border-radius: 4px;
+  width: 60px;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  font-size: 20px;
+  box-shadow: none;
+}
+
+button:active {
+  top: 4px;
+  border: 0 solid #000;
+  color: #495069;
+  background-color: #8F5FD4;
+  border-radius: 4px;
+  width: 60px;
+  height: 50px;
+  float: left;
+  margin: 5px;
+  font-size: 20px;
+  box-shadow: none;
+}
+
+#answer {
+  width: 270px;
+  font-size: 26px;
+  text-align: center;
+  background-color: #F1FAEB;
+  float: left;
+}
+
+#answer:hover {
+  width: 270px;
+  font-size: 26px;
+  text-align: center;
+  background-color: #F1FAEB;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+#answer:active {
+  top: 5px;
+  width: 270px;
+  font-size: 26px;
+  text-align: center;
+  background-color: #F1FAEB;
+  box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+}
+
+.operator {
+  background-color: #f1ff92;
+  position: relative;
+}
+
+.operator:hover {
+  color: blue;
+  background-color: #E7F56B;
+  box-shadow: 0 4px #B7C259;
+  /* animation: flip .5s 1; */
+}
+
+.operator:active {
+  top: 4px;
+  box-shadow: none;
+}
+
+.clear {
+  float: left;
+  position: relative;
+  display: block;
+  background-color: #ff9fa8;
+  margin-bottom: 15px;
+}
+
+.clear:hover {
+  float: left;
+  display: block;
+  background-color: #F297A0;
+  margin-bottom: 15px;
+  box-shadow: 0 4px #CC7F86;
+}
+
+.clear:active {
+  float: left;
+  top: 4px;
+  display: block;
+  background-color: #F297A0;
+  margin-bottom: 15px;
+  box-shadow: none;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Mouse Memoirs', sans-serif;
+  font-size: 48px;
+  text-align: center;
+  color: aqua;
+  text-shadow: 5px 5px 10px yellowgreen;
+  animation: flip 1s infinite;
+}
+
+@keyframes flip {
+
+  0%,
+  80% {
+      transform: rotateY(360deg)
+  }
+}
+
+.answer {
+  color: blue;
+}
+
+.answer:hover {
+  color: red;
+  text-shadow: 2px 2px 4px red;
+}
+
+input {
+  transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+input:hover {
+  transform: scale(1.5);
+}
