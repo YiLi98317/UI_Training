@@ -22,11 +22,11 @@ function calculate(s) {
 
         if (!isNaN(parseInt(c))) curr = curr * 10 + parseInt(c);
 
-        if (isNaN(parseInt(c)) || i == s.length - 1) {
-            if (op == '+' || op == '-') {
+        if (isNaN(parseInt(c)) || i === s.length - 1) {
+            if (op === '+' || op === '-') {
                 result += last;
-                last = op == '+' ? curr : -1 * curr;
-            } else if (op == '*') {
+                last = op === '+' ? curr : -1 * curr;
+            } else if (op === '*') {
                 last *= curr;
             } else {
                 last /= curr;

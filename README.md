@@ -15,8 +15,7 @@ mango db
 
 mui
 js vs jsx
-calculator in react
-how to transform props btw components
+how to transform props btw components ===> hook?
 
 
 

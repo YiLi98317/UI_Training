@@ -34,7 +34,8 @@ function Button(props) {
                 else if(className === "clear") clear();
                 else add();
             }}
-            class = {className}
+            className = {className}
+            // key = {}
         />
     );
 }
