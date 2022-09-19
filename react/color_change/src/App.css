@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+  background-color: whitesmoke;
+}
+
+.color-panel {
+  width: 70%;
+  height: 200px;
+  margin-left: 15%;
+  margin-bottom: 5%;
+}
+
+.selector {
+  margin-bottom: 3%;
+}
