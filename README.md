@@ -15,7 +15,7 @@ mango db
 
 mui
 js vs jsx
-how to transform props btw components ===> hook?
+3 component: 1 display color; 2 select color; 3 apply color
 
 
 
