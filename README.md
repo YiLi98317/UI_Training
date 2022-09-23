@@ -15,10 +15,13 @@ mango db
 
 mui
 js vs jsx
-3 component: 1 display color; 2 select color; 3 apply color
+
+color picker
 
 
-
+todo app
+on top
+add / remove
 
 
 
