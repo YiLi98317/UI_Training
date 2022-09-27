@@ -19,9 +19,7 @@ js vs jsx
 color picker
 
 
-todo app
-on top
-add / remove
+useEffect example
 
 
 
